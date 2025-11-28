@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    .checkOutBox {
+        transition: .3 all ease-in-out;
+    }
+
+    .checkOutBox:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .placeOrder {
+        background-color: #d4a83a;
+    }
+
+    .placeOrder:hover {
+        background-color: rgba(72, 72, 72, 0.952);
+        color: black;
+    }
+
+    .form-control {
+        border: 2px solid rgba(128, 128, 128, 0.338);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+        border-color: black;
+        box-shadow: none;
+    }
+</style>
+
+<body>
+    <main>
+        <section>
+            <a href="cart.html" style="text-decoration: none;" class="d-flex gap-2 ms-3 mt-5 align-items-center">
+                <img src="img/left-arrow (1).png" alt="">
+                <small style="color: #737373; font-size: 20px;">Back to Cart</small>
+            </a>
+        </section>
+        <section class="container-fluid">
+            <h1 class="fw-bold mb-3 mt-3">Checkout</h1>
+
+            <section class="d-flex justify-content-between gap-5">
+                <!-- Checkout & Payment method -->
+                <section class="w-100">
+                    <div class="checkOutBox w-100 px-4 py-4 rounded-3 mb-4"
+                        style="outline: 1px solid rgba(128, 128, 128, 0.25);">
+                        <div class="container" style="max-width: 900px;">
+
+                            <h3 class="fw-bold mb-4">Shipping Information</h3>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Stephen John">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">Phone Number</label>
+                                    <input type="text" class="form-control" placeholder="+234-">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">Email</label>
+                                    <input type="email" class="form-control" placeholder="john@example.com">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Address</label>
+                                <input type="text" class="form-control" placeholder="Ibadan, Oyo State">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label outline-none fw-semibold">City</label>
+                                    <input type="text" class="form-control" placeholder="Ibadan">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">State</label>
+                                    <input type="text" class="form-control" placeholder="Oyo">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">Country</label>
+                                    <input type="text" class="form-control" placeholder="Nigeria">
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-semibold">Zip Code</label>
+                                    <input type="text" class="form-control" placeholder="200000">
+                                </div>
+                            </div>
+
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="saveAddress">
+                                <label class="form-check-label" for="saveAddress">Save this address for future
+                                    orders</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="checkOutBox w-100 px-4 py-4 rounded-3 mb-5"
+                        style="outline: 1px solid rgba(128, 128, 128, 0.25);">
+                        <h3 class="fw-bold mb-4">Payment Method</h3>
+                        <label class="method-option d-flex align-items-center gap-2 mb-3"
+                            style="border:1px solid #ddd; border-radius:10px; padding:12px 15px; cursor:pointer; transition:0.2s; background:#fff;">
+                            <input type="radio" name="pay" checked>
+                            <span><i class="bi bi-credit-card-2-front"></i> Credit / Debit Card</span>
+                        </label>
+                        <label class="method-option d-flex align-items-center gap-2 mb-3"
+                            style="border:1px solid #ddd; border-radius:10px; padding:12px 15px; cursor:pointer; transition:0.2s; background:#fff;">
+                            <input type="radio" name="pay">
+                            <span><i class="bi bi-bank"></i> Bank Transfer</span>
+                        </label>
+                        <label class="method-option d-flex align-items-center gap-2 mb-4"
+                            style="border:1px solid #ddd; border-radius:10px; padding:12px 15px; cursor:pointer; transition:0.2s; background:#fff;">
+                            <input type="radio" name="pay">
+                            <span><i class="bi bi-truck"></i> Cash on Delivery</span>
+                        </label>
+                        <div class="mb-3">
+                            <label style="font-weight:600; margin-bottom:5px; font-size:0.95rem;">Card Number *</label>
+                            <input type="text" class="form-control" placeholder="1234 5678 9012 3456"
+                                style="border-radius:8px;">
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label style="font-weight:600; margin-bottom:5px; font-size:0.95rem;">Expiry
+                                    Date</label>
+                                <input type="text" class="form-control" placeholder="MM/YY" style="border-radius:8px;">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label style="font-weight:600; margin-bottom:5px; font-size:0.95rem;">CVV</label>
+                                <input type="text" class="form-control" placeholder="123" style="border-radius:8px;">
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Order -->
+                <section class="w-50">
+                    <div class=" container rounded-3 py-4 px-4" style="outline: 1px solid rgba(128, 128, 128, 0.25);">
+                        <p class="fw-bold pb-3" style="font-size: 20px;">Order Summary</p>
+                        <div class="d-flex justify-content-between">
+                            <p style="font-size: 18px; color: #737373;" class="fw-semibold">Subtotal</p>
+                            <p>$0.00</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p style="font-size: 18px; color: #737373;" class="fw-semibold">Shipping</p>
+                            <p>$0.00</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <p class="fw-bold" style="font-size: 20px;">Total</p>
+                            <p style="font-size: 20px;" class="fw-bold">$0.00</p>
+                        </div>
+                        <div class="d-flex flex-column text-center">
+                            <a href="#"><button class="placeOrder btn btn-lg px-5 w-100 mt-3 fw-semibold">Place
+                                    Order</button></a>
+                        </div>
+                        <div class="text-center d-flex align-items-center justify-content-center mt-3">
+                            <img src="img/lock (2).png" alt="" width="20px">
+                            <p class="m-0 fw-semibold" style="color: #737373;">Secure Checkout</p>
+                        </div>
+
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+
+</html>

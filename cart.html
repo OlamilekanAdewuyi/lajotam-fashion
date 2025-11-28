@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ContinueShopping1 {
+        background-color: #d4a83a;
+    }
+
+    .ContinueShopping1:hover {
+        background-color: rgba(72, 72, 72, 0.952);
+        color: black;
+    }
+
+    .proceedToCheckOut {
+        background-color: #d4a83a;
+        opacity: .6;
+    }
+
+    .proceedToCheckOut:hover {
+        background-color: rgba(72, 72, 72, 0.952);
+        color: black;
+    }
+
+    .ContinueShopping2:hover {
+        background-color: rgba(253, 245, 245, 0.734);
+        color: black;
+    }
+
+    .cart {
+        transition: .3s ease-in-out;
+    }
+
+    .cart:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .orderSummary {
+        transition: .3s ease-in-out;
+    }
+
+    .orderSummary:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-control {
+        text-align: center;
+        border: 2px solid rgba(128, 128, 128, 0.338);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+        border-color: #6a11cb;
+        box-shadow: 0 0 10px rgba(106, 17, 203, 0.4);
+    }
+</style>
+
+<body>
+    <main class="px-4">
+        <section class=" pt-5 pb-3">
+            <h1 class="fw-bold">Shoping cart</h1>
+            <p style="color: #737373;">items in your cart</p>
+        </section>
+        <section class="d-flex gap-4 justify-content-between">
+            <div class="cart text-center align-items-center w-100 rounded-3"
+                style="outline: 1px solid rgba(128, 128, 128, 0.25); max-height: 300px;">
+                <img src="img/basket.png" alt="" class="mt-5 mb-3">
+                <p class="fw-semibold m-0 pb-2" style="font-size: 23px;">Your cart is empty</p>
+                <p class="m-0 pb-4" style="color: #737373;">Add some items to get started</p>
+                <a href="index.html"><button class="ContinueShopping1 btn btn-small fw-semibold">Continue
+                        Shopping</button></a>
+            </div>
+            <div class="orderSummary w-50 container rounded-3 py-4 px-4"
+                style="outline: 1px solid rgba(128, 128, 128, 0.25);">
+                <p class="fw-bold pb-3" style="font-size: 20px;">Order Summary</p>
+                <div class="d-flex justify-content-between">
+                    <p style="font-size: 18px; color: #737373;" class="fw-semibold">Subtotal</p>
+                    <p>$0.00</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p style="font-size: 18px;" class="fw-semibold">Shipping</p>
+                    <p>$0.00</p>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <p class="fw-bold" style="font-size: 20px;">Total</p>
+                    <p style="font-size: 20px;" class="fw-bold">$0.00</p>
+                </div>
+                <div class="d-flex flex-column text-center">
+                    <a href="checkout.html"><button class="proceedToCheckOut btn px-5 mt-3 mb-2 fw-semibold w-100"
+                            style="text-decoration: none;">Proceed to
+                            checkout</button></a>
+                    <a href="#"><button class="ContinueShopping2 btn px-5 btn-small fw-semibold w-100">Continue
+                            Shopping</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    .login{
+        color:  #807f7f;
+    }
+    .login:hover{
+        color: #d4a83a;
+        cursor: pointer;
+    }
+
+</style>
+
+<body>
+    <main>
+        <section
+            style="background-image: url('img/imgi_8_pngtree-a-mod.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; object-fit: contain; height: 100vh; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.389);  display: flex; align-items: center; justify-content: center; filter: blur(0.3px);"
+            class="d-flex justify-content-center w-100">
+
+
+            <div class="w-50 d-flex flex-column justify-content-center mt-5 mb-5 py-4 px-5 rounded-3"
+                style="background-color: #e5e3de;">
+                <div class="mb-2 text-center">
+                    <h2 class="fw-bold fs-4">Lajotam Fashion</h2>
+                    <p style="color: #807f7f;" class="fw-semibold">Create your account</p>
+                </div>
+                <form action="" class="d-flex flex-column w-100">
+                    <div id="requestToFillAllInput" class="text-center rounded-3 p-2 mb-3"
+                        style="color: red; background-color: rgba(255, 0, 0, 0.237); display: none;">Please fill all
+                        inputs!</div>
+                    <div class="d-flex flex-column mb-3">
+                        <label for="name" class="mb-2 fw-semibold">Full Name</label>
+                        <input type="text" placeholder="Stephen John" class="form-control py-2 shadow-none"
+                            style="background-color: #fafafa; border-radius: 12px;" id="fullName">
+                    </div>
+                    <div class="d-flex flex-column mb-3">
+                        <label for="email" class="mb-2 fw-semibold">Email</label>
+                        <input type="email" placeholder="name@example.com" class="form-control py-2 shadow-none"
+                            style="background-color: #fafafa; border-radius: 12px;" id="email">
+                    </div>
+                    <div class="d-flex flex-column mb-3">
+                        <label for="password" class="mb-2 fw-semibold">Password</label>
+                        <input type="password" placeholder="Create a strong password"
+                            class="form-control py-2 shadow-none"
+                            style="background-color: #fafafa; border-radius: 12px;" id="password">
+                    </div>
+                    <div class="d-flex flex-column mb-2">
+                        <label for="confirmPassword" class="mb-2 fw-semibold">Confirm Password</label>
+                        <input type="password" placeholder="Confirm your password" class="form-control py-2 shadow-none"
+                            style="background-color: #fafafa; border-radius: 12px;" id="confirmPassword">
+                    </div>
+                    <p class="pt-2 fw-semibold" style="color: #807f7f;">Join the Lajotam Family — discover your perfect style.</p>
+                </form>
+
+                <button class="btn fw-bold mt-2 w-100 mb-3"
+                    style="background-color: #d4a83a; color: white; border-radius: 12px;" onclick="signUp()">Sign
+                    Up</button>
+                <p class="login text-center">Already have an account? <a href="login.html"
+                         class="fw-semibold" style="color: #807f7f; text-decoration: none;">Login</a></p>
+            </div>
+
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+
+</html>
