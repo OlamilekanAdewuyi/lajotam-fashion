@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Collection | Lajotam Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --accent-color: #d4a83a;
+            --text-color: #737373;
+            --border-color: rgba(128, 128, 128, 0.25);
+            --background-light: #fafafa;
+        }
+
+        body {
+            transition: 0.3s ease-in-out;
+            background-color: white;
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .nav-item .nav-link:hover,
+        .footer-nav a:hover,
+        .header-icon:hover,
+        .product-price {
+            color: var(--accent-color) !important;
+        }
+
+        .header-icon:hover {
+            background-color: var(--accent-color);
+        }
+
+        .footer-icon:hover {
+            background-color: var(--accent-color);
+        }
+
+        footer li a {
+            color: #737373;
+            text-decoration: none;
+        }
+
+        .hero-section-btn:hover {
+            color: black;
+        }
+
+        .btn-primary-accent {
+            background-color: var(--accent-color);
+            border: none;
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn-primary-accent:hover {
+            background-color: #c09635;
+            transform: translateY(-1px);
+        }
+
+        .women-hero {
+            background-image: url('img/women-hero-bg-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            background-blend-mode: overlay;
+            color: black;
+            padding: 100px 0;
+            margin-bottom: 60px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .women-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+            position: relative;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .women-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 168, 58, 0.2);
+            border-color: var(--accent-color);
+            cursor: pointer;
+        }
+
+        .women-card-image-wrapper {
+            overflow: hidden;
+            height: 280px;
+        }
+
+        .women-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
+
+        .women-card:hover .women-card-image {
+            opacity: 0.9;
+        }
+
+        .women-card-body {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .category-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: black;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        .category-nav {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        .category-nav .nav-link {
+            color: black;
+            font-weight: 600;
+            transition: color 0.2s, background-color 0.2s;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .category-nav .nav-link:hover {
+            color: var(--accent-color);
+            background-color: var(--background-light);
+        }
+
+        .category-nav .nav-link.active {
+            color: white;
+            background-color: var(--accent-color);
+        }
+
+        .section-cta {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="position: sticky; z-index: 1020; top: 0;">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="index.html" style="color: black;">
+                    <span style="color: var(--accent-color); margin-right: 5px;">
+                        <i class="bi bi-gem"></i> </span>
+                    Lajotam Fashion
+                </a>
+                <div class="d-flex gap-2 align-items-center">
+                    <div class="d-flex d-lg-none">
+                        <a href="#" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-search"
+                                style="color: black;"></i></a>
+                        <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
+                                style="color: black;"></i></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-semibold" aria-current="page"
+                                href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semibold" href="women.html">Women</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="jewelry.html">Jewelry</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="lace.html">Lace</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
+                    </ul>
+                    <div class="d-flex gap-3 d-none d-lg-block">
+                        <a href="#" class="header-icon px-2 py-2 rounded-3"><i class="bi bi-search text-dark"></i></a>
+                        <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="women-hero">
+            <div class="container text-center">
+                <h1 class="fw-bold display-1" style="color: #4a4a4a;">The Icon. The Moment.</h1>
+                <p class="fs-4 fw-light mb-4" style="color: #666;">Couture quality ready for your everyday statement.
+                </p>
+                <a href="" class="hero-section-btn"><button class="btn btn-primary-accent btn-lg">Shop The Dress
+                        Edit</button></a>
+            </div>
+        </section>
+
+        <div class="container pb-5">
+
+            <h2 class="text-center fw-bold display-6 mb-3">The New Season Collection</h2>
+
+            <nav class="category-nav">
+                <div class="nav nav-pills justify-content-center flex-wrap" id="nav-tab" role="tablist">
+                    <a class="nav-link active" href="#dresses">Dresses</a>
+                    <a class="nav-link" href="#tops">Tops & Blouses</a>
+                    <a class="nav-link" href="#bottoms">Bottoms</a>
+                    <a class="nav-link" href="#outerwear">Outerwear</a>
+                </div>
+            </nav>
+
+            <h3 class="category-heading pt-5" style="margin-top: -30px;" id="dresses">The Dress Edit</h3>
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-1.jpg" alt="A-Line Silk Dress" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Luxe Satin Slip Dress</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$320.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-2.jpg" alt="Tailored Blazer Dress" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Tailored Poplin Blazer Dress</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$290.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-3.jpg" alt="Lace Evening Gown" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Corded Lace Evening Gown</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$850.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-4.jpg" alt="Cashmere Knit Dress" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Cashmere Knit Midi Dress</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$350.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-5.jpg" alt="Floral Print Dress" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Silk Floral Print Dress</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$410.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-6.jpg" alt="Wrap Dress" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Classic Wrap Dress</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$280.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-7.jpg" alt="Tulle Ballgown" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Tulle Embroidered Ballgown</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$1,200.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-dress-8.jpg" alt="Little Black Dress" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">The Essential LBD</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$220.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section-cta my-5">
+                <h3 class="fw-bold mb-3">Complete Your Look</h3>
+                <p style="color: var(--text-color);">Explore our matching jewelry for a flawless
+                    look.</p>
+                <a href="jewelry.html" class="btn btn-primary-accent btn-lg">Browse Accessories</a>
+            </div>
+
+            <h3 class="category-heading pt-5" style="margin-top: -30px;" id="tops">Tops & Blouses</h3>
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-1.jpg" alt="Silk Blouse" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">High-Neck Silk Blouse</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$190.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-2.jpg" alt="Cashmere Sweater" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Luxury Cashmere Sweater</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$250.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-3.jpg" alt="Lace Cami" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Silk and Lace Cami</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$110.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-4.jpg" alt="Cotton T-shirt" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Pima Cotton Crew Neck</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$75.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-5.jpg" alt="Off-Shoulder Top" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Off-Shoulder Linen Top</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$140.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-6.jpg" alt="Fine Knit Cardigan" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Fine Knit Cardigan</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$180.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-7.jpg" alt="Printed Tunic" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Printed Silk Tunic</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$210.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-top-8.jpg" alt="Cashmere Hoodie" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Cashmere Blend Hoodie</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$299.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="category-heading pt-5" style="margin-top: -30px;" id="bottoms">Bottoms</h3>
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-1.jpg" alt="Tailored Wool Trousers" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Wide-Leg Wool Trousers</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$210.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-2.jpg" alt="Silk Midi Skirt" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Bias-Cut Silk Midi Skirt</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$170.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-3.jpg" alt="Leather Leggings" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Fine Leather Leggings</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$350.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-4.jpg" alt="Linen Shorts" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Tailored Linen Shorts</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$95.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-5.jpg" alt="Classic Jeans" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Classic High-Rise Denim</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$150.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-6.jpg" alt="Tweed Mini Skirt" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Tailored Tweed Mini Skirt</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$160.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-7.jpg" alt="Pleated Trousers" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Elegant Pleated Trousers</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$195.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-bottom-8.jpg" alt="Wool Trousers" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Merino Wool Trousers</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$230.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="category-heading pt-5" style="margin-top: -30px;" id="outerwear">Outerwear</h3>
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-1.jpg" alt="Classic Trench Coat" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Classic Trench Coat</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$550.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-2.jpg" alt="Cashmere Coat" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Maxi Cashmere Wool Coat</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$890.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-3.jpg" alt="Padded Vest" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Quilted Padded Vest</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$290.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-4.jpg" alt="Leather Jacket" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Fitted Leather Jacket</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$690.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-5.jpg" alt="Raincoat" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Waterproof Technical Raincoat</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$320.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-6.jpg" alt="Cape" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Cashmere Blend Wool Cape</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$480.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-7.jpg" alt="Light Blazer" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Linen Tailored Blazer</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$310.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="women-card">
+                        <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                            <div class="women-card-image-wrapper">
+                                <img src="img/women-outerwear-8.jpg" alt="Denim Jacket" class="women-card-image">
+                            </div>
+                            <div class="women-card-body">
+                                <p class="mb-0 fw-semibold">Premium Raw Denim Jacket</p>
+                                <p class="fs-5 fw-bold product-price mb-2">$195.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="background: black; color: #737373;">
+        <div class="container">
+            <div class="container py-5 px-4">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="pb-2">About Lajotam</h4>
+                        <p style="color: #737373; font-size: 18px;">
+                            Lajotam Fashion brings you the finest collection of luxury fashion, jewelry, and
+                            accessories.
+                            We celebrate your unique style with timeless elegance.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="pb-2">Customer Service</h4>
+                        <ul class="list-unstyled" style="line-height: 30px; color: #737373;">
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Contact Us</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Shipping & Returns</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Size Guide</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">FAQ</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <h4 class="pb-2">Contact Us</h4>
+                        <div>
+                            <div class="d-flex flex-column gap-2 list-unstyled">
+                                <li class="footer-nav"><a
+                                        href="mailto:olamilekanadewuyi90@gmail.com? subject=Hello!">Drop an Email</a>
+                                </li>
+                                <li class="footer-nav"><a href="tel:+2349163730197">Call us</a></li>
+                                <li class="footer-nav"><a href="https://wa.me/9163730197">Connect with us on
+                                        WhatsApp</a></li>
+                            </div>
+                            <p style="color: #737373;" class="mt-2">Address: Ogbomoso, Oyo State, Nigeria</p>
+                        </div>
+
+                        <div class="d-flex gap-3 pt-3">
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-instagram text-white"></i></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-facebook text-white"></i></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-twitter text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="pt-4 text-center m-0 pb-5">© 2025 Lajotam Fashion. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

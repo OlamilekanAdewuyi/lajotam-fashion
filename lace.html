@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lace Collection | Lajotam Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --accent-color: #d4a83a;
+            --text-color: #737373;
+            --border-color: rgba(128, 128, 128, 0.25);
+            --background-light: #fafafa;
+        }
+
+        body {
+            transition: 0.3s ease-in-out;
+            background-color: var(--background-light);
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .nav-item .nav-link:hover,
+        .footer-nav a:hover,
+        .header-icon:hover,
+        .product-price {
+            color: var(--accent-color) !important;
+        }
+
+        .header-icon:hover {
+            background-color: var(--accent-color);
+        }
+
+        footer li a {
+            color: #737373;
+            text-decoration: none;
+        }
+
+        .footer-icon:hover {
+            background-color: var(--accent-color);
+        }
+
+        .btn-primary-accent {
+            background-color: var(--accent-color);
+            border: none;
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn-primary-accent:hover {
+            background-color: #c09635;
+            transform: translateY(-1px);
+        }
+
+        .lace-card {
+            border: 1px solid var(--border-color);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .lace-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 2px var(--accent-color), 0 5px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .lace-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .lace-banner {
+            background-image: url('img/lace-banner-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-blend-mode: overlay;
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 50px;
+        }
+    </style>
+
+    <body>
+        <header style="position: sticky; z-index: 1020; top: 0;">
+            <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+                <div class="container">
+                    <a class="navbar-brand fw-bold fs-4" href="index.html" style="color: black;">
+                        <span style="color: var(--accent-color); margin-right: 5px;">
+                            <i class="bi bi-gem"></i> </span>
+                        Lajotam Fashion
+                    </a>
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="d-flex d-lg-none">
+                            <a href="#" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-search"
+                                    style="color: black;"></i></a>
+                            <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
+                                    style="color: black;"></i></a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="jewelry.html">Jewelry</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="lace.html">Lace</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex gap-3 d-none d-lg-block">
+                            <a href="#" class="header-icon px-2 py-2 rounded-3"><i
+                                    class="bi bi-search text-dark"></i></a>
+                            <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
+                                    class="bi bi-bag text-dark"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="lace-banner">
+                <div class="container text-center">
+                    <h1 class="fw-bold display-4">Exquisite Lace Fabrics</h1>
+                    <p class="fs-5 fw-light mb-4">Hand-stitched designs from Italy and France, sold by the yard.</p>
+                    <button class="btn btn-primary-accent btn-lg">View Swatches</button>
+                </div>
+            </section>
+
+            <div class="container pb-5">
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="fw-bold mb-4 text-center">Premium Guipure & Corded Lace</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="lace-card">
+                            <img src="Images/lace/ivory-corde-lace-1.jpeg" alt="Ivory Corded Lace" class="lace-image">
+                            <div class="p-3">
+                                <h5 class="fw-semibold mb-1">Ivory Corded Guipure</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$85.00 / Yard</p>
+                                <a href="product-details.html" class="btn btn-primary-accent w-100 btn-sm">View
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="lace-card">
+                            <img src="Images/lace/Royal-Blue-French-Lace-2.jpeg" alt="Royal Blue French Lace" class="lace-image">
+                            <div class="p-3">
+                                <h5 class="fw-semibold mb-1">Royal Blue French Brocade</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$110.00 / Yard</p>
+                                <a href="product-details.html" class="btn btn-primary-accent w-100 btn-sm">View
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="lace-card">
+                            <img src="Images/lace/Sequin-Embroidered-Red-Lace.jpeg" alt="Sequin Embroidered Red Lace" class="lace-image">
+                            <div class="p-3">
+                                <h5 class="fw-semibold mb-1">Sequin Embroidered Tulle</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$135.00 / Yard</p>
+                                <a href="product-details.html" class="btn btn-primary-accent w-100 btn-sm">View
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="lace-card">
+                            <img src="Images/lace/Black-Chantilly-Lace.jpeg" alt="Black Chantilly Lace" class="lace-image">
+                            <div class="p-3">
+                                <h5 class="fw-semibold mb-1">Black Chantilly Eyelash</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$95.00 / Yard</p>
+                                <a href="product-details.html" class="btn btn-primary-accent w-100 btn-sm">View
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center pt-5 mt-5">
+                    <h3 class="fw-semibold mb-3">Lace Care & Tailoring Guide</h3>
+                    <p class="mb-4" style="color: var(--text-color);">Learn how to care for and customize your luxury
+                        fabrics.</p>
+                    <button class="btn btn-primary-accent btn-lg">Read Guide</button>
+                </div>
+            </div>
+        </main>
+
+        <footer style="background: black; color: #737373;">
+            <div class="container">
+                <div class="container py-5 px-4">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="pb-2">About Lajotam</h4>
+                            <p style="color: #737373; font-size: 18px;">
+                                Lajotam Fashion brings you the finest collection of luxury fashion, jewelry, and
+                                accessories.
+                                We celebrate your unique style with timeless elegance.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="pb-2">Customer Service</h4>
+                            <ul class="list-unstyled" style="line-height: 30px; color: #737373;">
+                                <li class="footer-nav"><a href="#" class="footer-nav-link">Contact Us</a></li>
+                                <li class="footer-nav"><a href="#" class="footer-nav-link">Shipping & Returns</a></li>
+                                <li class="footer-nav"><a href="#" class="footer-nav-link">Size Guide</a></li>
+                                <li class="footer-nav"><a href="#" class="footer-nav-link">FAQ</a></li>
+                                <li class="footer-nav"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 ">
+                            <h4 class="pb-2">Contact Us</h4>
+                            <div>
+                                <div class="d-flex flex-column gap-2 list-unstyled">
+                                    <li class="footer-nav"><a
+                                            href="mailto:olamilekanadewuyi90@gmail.com? subject=Hello!">Drop an
+                                            Email</a>
+                                    </li>
+                                    <li class="footer-nav"><a href="tel:+2349163730197">Call us</a></li>
+                                    <li class="footer-nav"><a href="https://wa.me/9163730197">Connect with us on
+                                            WhatsApp</a></li>
+                                </div>
+                                <p style="color: #737373;" class="mt-2">Address: Ogbomoso, Oyo State, Nigeria</p>
+                            </div>
+
+                            <div class="d-flex gap-3 pt-3">
+                                <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                        class="bi bi-instagram text-white"></i></a>
+                                <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                        class="bi bi-facebook text-white"></i></a>
+                                <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                        class="bi bi-twitter text-white"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="pt-4 text-center m-0 pb-5">© 2025 Lajotam Fashion. All rights reserved.</p>
+        </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
+</html>

@@ -4,77 +4,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<style>
-    .login{
-        color:  #807f7f;
-    }
-    .login:hover{
-        color: #d4a83a;
-        cursor: pointer;
-    }
+    <title>Sign Up | Lajotam Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-</style>
+    <style>
+        :root {
+            --accent-color: #d4a83a;
+            --text-color: #737373;
+            --border-color: rgba(128, 128, 128, 0.25);
+            --form-bg: #f9f9f9;
+            --card-bg: #ffffff;
+            --error-bg: #ffebeb;
+            --error-text: #cc0000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+        }
+
+        .signup-section {
+            background-image: url('img/imgi_8_pngtree-a-mod.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .signup-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+
+        .signup-card {
+            background-color: var(--card-bg);
+            max-width: 500px;
+            width: 95%;
+            padding: 45px 55px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            animation: cardEnter 0.7s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes cardEnter {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .signup-card h2 {
+            font-size: 2.3rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .signup-card .lead-text {
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-control-lajotam {
+            background-color: var(--form-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 18px;
+            width: 100%;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .form-control-lajotam:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 168, 58, 0.2);
+            transform: translateY(-2px);
+        }
+
+        #requestToFillAllInput {
+            color: var(--error-text);
+            background-color: var(--error-bg);
+            border: 1px solid var(--error-text);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-signup {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 168, 58, 0.3);
+        }
+
+        .btn-signup:hover {
+            background-color: #c09635;
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 10px 25px rgba(212, 168, 58, 0.5);
+        }
+
+        .policy-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .policy-links a:hover {
+            color: #c09635;
+            text-decoration: underline;
+        }
+
+        .login-text {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-top: 25px;
+        }
+
+        .login-text a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .login-text a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
 <body>
-    <main>
-        <section
-            style="background-image: url('img/imgi_8_pngtree-a-mod.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; object-fit: contain; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.389);  display: flex; align-items: center; justify-content: center; filter: blur(0.3px);"
-            class="">
 
-
-            <div class=" d-flex flex-column justify-content-center mt-5 mb-5 py-4 px-5 rounded-3 ;"
-                style="background-color: #e5e3de; max-width: 450px; width: 95%;">
-                <div class="mb-2 text-center">
-                    <h2 class="fw-bold fs-4">Lajotam Fashion</h2>
-                    <p style="color: #807f7f;" class="fw-semibold">Create your account</p>
-                </div>
-                <form action="" class="d-flex flex-column w-100">
-                    <div id="requestToFillAllInput" class="text-center rounded-3 p-2 mb-3"
-                        style="color: red; background-color: rgba(255, 0, 0, 0.237); display: none;">Please fill all
-                        inputs!</div>
-                    <div class="d-flex flex-column mb-3">
-                        <label for="name" class="mb-2 fw-semibold">Full Name</label>
-                        <input type="text" placeholder="Stephen John" class="form-control py-2 shadow-none"
-                            style="background-color: #fafafa; border-radius: 12px;" id="fullName">
-                    </div>
-                    <div class="d-flex flex-column mb-3">
-                        <label for="email" class="mb-2 fw-semibold">Email</label>
-                        <input type="email" placeholder="name@example.com" class="form-control py-2 shadow-none"
-                            style="background-color: #fafafa; border-radius: 12px;" id="email">
-                    </div>
-                    <div class="d-flex flex-column mb-3">
-                        <label for="password" class="mb-2 fw-semibold">Password</label>
-                        <input type="password" placeholder="Create a strong password"
-                            class="form-control py-2 shadow-none"
-                            style="background-color: #fafafa; border-radius: 12px;" id="password">
-                    </div>
-                    <div class="d-flex flex-column mb-2">
-                        <label for="confirmPassword" class="mb-2 fw-semibold">Confirm Password</label>
-                        <input type="password" placeholder="Confirm your password" class="form-control py-2 shadow-none"
-                            style="background-color: #fafafa; border-radius: 12px;" id="confirmPassword">
-                    </div>
-                    <p class="pt-2 fw-semibold" style="color: #807f7f;">Join the Lajotam Family — discover your perfect style.</p>
-                </form>
-
-                <button class="btn fw-bold mt-2 w-100 mb-3"
-                    style="background-color: #d4a83a; color: white; border-radius: 12px;" onclick="signUp()">Sign
-                    Up</button>
-                <p class="login text-center">Already have an account? <a href="login.html"
-                         class="fw-semibold" style="color: #807f7f; text-decoration: none;">Login</a></p>
+    <section class="signup-section">
+        <div class="signup-card text-center">
+            <div class="mb-4">
+                <h2 class="fw-bold">Join Lajotam Fashion</h2>
+                <p class="lead-text">Create your account and discover exquisite styles.</p>
             </div>
 
-        </section>
-    </main>
+            <form action="" class="d-flex flex-column w-100" onsubmit="event.preventDefault(); signUp();">
+                <div id="requestToFillAllInput" class="rounded-3 p-2 mb-3" style="display: none;">
+                    Please fill all fields to continue.
+                </div>
+
+                <div class="form-group text-start">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Stephen John" class="form-control-lajotam" required>
+                </div>
+
+                <div class="form-group text-start">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" class="form-control-lajotam" required>
+                </div>
+
+                <div class="form-group text-start">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" placeholder="Create a strong password"
+                        class="form-control-lajotam" required>
+                </div>
+
+                <div class="form-group text-start">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter your password"
+                        class="form-control-lajotam" required>
+                </div>
+
+                <p class="pt-3 fw-semibold text-start policy-links" style="color: var(--text-color);">
+                    By signing up, you agree to our
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>
+                    and
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>.
+                </p>
+            </form>
+
+            <button class="btn btn-signup w-100" onclick="signUp()">CREATE MY ACCOUNT</button>
+
+            <p class="login-text text-center">Already a member? <a href="signIn.html">LOG IN</a></p>
+        </div>
+    </section>
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="termsModalLabel" style="color: var(--accent-color);">Lajotam
+                        Fashion Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted">Effective Date: December 5, 2025</p>
+
+                    <h4 class="fw-semibold mt-3">1. Acceptance of Terms</h4>
+                    <p>By accessing and using the Lajotam Fashion website (the "Service"), you accept and agree to be
+                        bound by the terms and provisions of this agreement. These terms apply to all visitors, users,
+                        and others who access or use the Service.</p>
+
+                    <h4 class="fw-semibold">2. User Accounts</h4>
+                    <p>When you create an account with us, you guarantee that the information you provide is accurate,
+                        complete, and current. You are responsible for safeguarding the password that you use to access
+                        the Service and for any activities or actions under your password.</p>
+
+                    <h4 class="fw-semibold">3. Purchases</h4>
+                    <p>If you wish to purchase any product or service made available through the Service ("Purchase"),
+                        you may be asked to supply certain information relevant to your Purchase including, without
+                        limitation, your name, payment information, and shipping address. All sales are final unless
+                        otherwise stated in our Returns Policy.</p>
+
+                    <h4 class="fw-semibold">4. Content and Intellectual Property</h4>
+                    <p>The Service and its original content (excluding content provided by users), features, and
+                        functionality are and will remain the exclusive property of Lajotam Fashion and its licensors.
+                        Our trademarks and trade dress may not be used in connection with any product or service without
+                        the prior written consent of Lajotam Fashion.</p>
+
+                    <h4 class="fw-semibold">5. Termination</h4>
+                    <p>We may terminate or suspend access to our Service immediately, without prior notice or liability,
+                        for any reason whatsoever, including without limitation if you breach the Terms.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary-accent" data-bs-dismiss="modal"
+                        style="background-color: var(--accent-color);">I Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="privacyModalLabel" style="color: var(--accent-color);">Lajotam
+                        Fashion Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted">Effective Date: December 5, 2025</p>
+
+                    <h4 class="fw-semibold mt-3">1. Information We Collect</h4>
+                    <p>We collect several types of information for various purposes to provide and improve our Service
+                        to you. This includes: Personal Data (Name, email address, shipping address) and Usage Data (how
+                        the Service is accessed and used).</p>
+
+                    <h4 class="fw-semibold">2. Use of Data</h4>
+                    <p>Lajotam Fashion uses the collected data for various purposes: to provide and maintain the
+                        Service; to notify you about changes to our Service; to provide customer support; to process
+                        orders and transactions; and to monitor the usage of the Service.</p>
+
+                    <h4 class="fw-semibold">3. Data Security</h4>
+                    <p>The security of your data is important to us, but remember that no method of transmission over
+                        the Internet or method of electronic storage is 100% secure. While we strive to use commercially
+                        acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+                    <h4 class="fw-semibold">4. Disclosure of Data</h4>
+                    <p>Lajotam Fashion may disclose your Personal Data in the good faith belief that such action is
+                        necessary to: comply with a legal obligation; protect and defend the rights or property of
+                        Lajotam Fashion; or protect the personal safety of users of the Service or the public.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary-accent" data-bs-dismiss="modal"
+                        style="background-color: var(--accent-color);">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function signUp() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessage = document.getElementById('requestToFillAllInput');
+
+            if (fullName && email && password && confirmPassword) {
+                if (password !== confirmPassword) {
+                    errorMessage.textContent = "Error: Passwords do not match!";
+                    errorMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'none';
+                    alert(`Welcome, ${fullName}! Account created successfully (Simulated).`);
+                }
+            } else {
+                errorMessage.textContent = "Error: Please fill all fields!";
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-    crossorigin="anonymous"></script>
 
 </html>

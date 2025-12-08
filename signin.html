@@ -5,42 +5,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <main>
-        <section
-            style="background-image: url('img/imgi_8_pngtree-a-mod.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; object-fit: contain; height: 100vh; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.389);  display: flex; align-items: center; justify-content: center; filter: blur(0.4px);"
-            class="d-flex justify-content-center w-100 display: flex; align-items: center; justify-content: center;">
+        <style>
+            :root {
+                --accent-color: #d4a83a;
+                --text-color: #737373;
+                --border-color: rgba(128, 128, 128, 0.25);
+                --form-bg: #fafafa;
+                --card-bg: #fff;
+            }
 
-            <div class="d-flex flex-column justify-content-center mt-5 mb-5 py-3 px-5 rounded-3"
-                style="background-color: #e5e3de;">
-                <div class="mb-3 text-center">
-                    <h2 class="fw-bold fs-3">Lajotam Fashion</h2>
-                    <p style="color: #807f7f;" class="fw-semibold">Welcome Back</p>
+            .login-section {
+                background-image: url('img/imgi_8_pngtree-a-mod.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                background-blend-mode: overlay;
+                background-color: rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .login-card {
+                background-color: var(--card-bg);
+                max-width: 450px;
+                width: 95%;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+                opacity: 0;
+                transform: scale(0.95);
+                animation: cardFadeIn 0.8s ease-out forwards;
+            }
+
+            .btn-login {
+                background-color: var(--accent-color);
+                color: white;
+                border-radius: 12px;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                font-weight: bold;
+            }
+
+            .btn-login:hover {
+                background-color: #c09635;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 15px rgba(212, 168, 58, 0.5);
+            }
+
+            .accent-link {
+                text-decoration: none;
+                color: var(--accent-color);
+                transition: color 0.2s;
+            }
+
+            .accent-link:hover {
+                color: #c09635;
+                text-decoration: underline;
+            }
+
+            .form-control {
+                background-color: var(--form-bg) !important;
+                border-radius: 8px !important;
+                border: 1px solid var(--border-color);
+                padding: 10px 15px;
+                box-shadow: none !important;
+            }
+
+            @keyframes cardFadeIn {
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        </style>
+
+        <section class="login-section">
+            <div class="login-card">
+                <div class="mb-4 text-center">
+                    <h2 class="fw-bold fs-2">Lajotam Fashion</h2>
+                    <p style="color: var(--text-color);" class="fw-semibold fs-5">Sign In to Continue Your Style Journey
+                    </p>
                 </div>
+
                 <form action="" class="d-flex flex-column w-100">
                     <div class="d-flex flex-column mb-3">
-                        <label for="email" class="mb-2 fw-semibold">Username</label>
-                        <input type="email" placeholder="name@example.com" class="form-control py-2 shadow-none"
-                            style="background-color: #fafafa; border-radius: 12px;">
+                        <label for="username" class="mb-2 fw-semibold">Username or Email</label>
+                        <input type="text" id="username" placeholder="enter your email or username" class="form-control"
+                            required>
                     </div>
-                    <div class="d-flex flex-column mb-3">
+
+                    <div class="d-flex flex-column mb-4">
                         <div class="d-flex justify-content-between">
                             <label for="password" class="mb-2 fw-semibold">Password</label>
-                            <p><a href="#" style="text-decoration: none; color: #d4a83a;">Forgot Password?</a></p>
+                            <p class="mb-2"><a href="#" class="accent-link">Forgot Password?</a></p>
                         </div>
-                        <input type="password" placeholder="•••••••••••"
-                            class="form-control py-2 shadow-none"
-                            style="background-color: #fafafa; border-radius: 12px;">
+                        <input type="password" id="password" placeholder="•••••••••••" class="form-control" required>
                     </div>
                 </form>
-                <a href="login.html"><button class="btn fw-bold mt-3 w-100 mb-3"
-                        style="background-color: #d4a83a; color: white; border-radius: 12px;">Log In</button></a>
-                <p class="text-center fw-semibold" style="color: #807f7f;">Don't have an account? <a href="signup.html"
-                        style="text-decoration: none; color: #807f7f;" class="fw-semibold">Sign up</a></p>
+
+                <a href="signIn.html"><button class="btn btn-login w-100 mb-3 py-3">LOG IN SECURELY</button></a>
+
+                <p class="text-center fw-semibold" style="color: var(--text-color);">
+                    New to Lajotam?
+                    <a href="signUp.html" class="accent-link fw-bold">Create an Account</a>
+                </p>
             </div>
         </section>
     </main>
@@ -51,4 +127,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
+
 </html>

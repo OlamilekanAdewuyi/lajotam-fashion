@@ -4,417 +4,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lajot</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Lajotam Fashion | Unveil Your Elegance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        :root {
+            --accent-color: #d4a83a;
+            --text-color: #737373;
+            --border-color: rgba(128, 128, 128, 0.25);
+            --background-light: #fafafa;
+        }
+
+        body {
+            transition: 3s ease-in-out;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .collection-box,
+        .hero-bttn,
+        .category-bttn,
+        .input-email {
+            transition: .3s ease-in-out;
+        }
+
+        .collection-box {
+            overflow: hidden;
+            border: none !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .collection-box:hover {
+            transform: scale(1.03);
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(212, 168, 58, 0.2);
+        }
+
+        .hero-bttn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-bttn:hover {
+            transform: scale(1.05);
+            background-color: #c09635;
+        }
+
+        .category-bttn {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid white;
+            color: white;
+        }
+
+        .category-bttn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .nav-item .nav-link:hover,
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-icon:hover {
+            background-color: var(--accent-color);
+        }
+
+        .footer-icon:hover {
+            background-color: var(--accent-color);
+        }
+
+        .hero-section {
+            background-image: url('img/imgi_19_pngtree-a-mo.jpg');
+            height: 95vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.55);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes textFadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-email {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px 10px;
+        }
+
+        .input-email:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 168, 58, 0.2);
+        }
+
+        .featured-card-wrapper {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardPopIn 0.8s ease-out forwards;
+        }
+
+        .featured-card-wrapper:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .featured-card-wrapper:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .featured-card-wrapper:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .featured-card-wrapper:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes cardPopIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer li a {
+            color: #737373;
+            text-decoration: none;
+        }
+    </style>
 </head>
-<style>
-    body{
-        transition: 3s ease-in-out;
-    }
-    .collection-box {
-        transition: .3s ease-in-out;
-    }
-
-    .collection-box:hover {
-        transform: scale(1.03);
-        cursor: pointer;
-    }
-
-    .collection-pic {
-        transition: .2s ease-in-out;
-    }
-
-    .collection-pic:hover {
-        cursor: pointer;
-        transform: scaleY(1.03);
-    }
-
-    .input-email {
-        border: 1px solid grey;
-        border-radius: 10px;
-        padding: 10px 0;
-    }
-
-    .input-email::placeholder {
-        padding-left: 10px;
-    }
-
-    .nav-item .nav-link {
-        transition: .3s ease-in-out;
-    }
-
-    .nav-item .nav-link:hover {
-        color: #d4a83a;
-    }
-
-    .header-icon {
-        transition: .3s ease-in-out;
-    }
-
-    .header-icon:hover {
-        background-color: #d4a83a;
-    }
-
-    .hero-bttn {
-        transition: .2s ease-in-out;
-    }
-
-    .hero-bttn:hover {
-        transform: scale(1.02);
-    }
-
-    .category-bttn {
-        border: 1px solid rgb(179, 179, 179);
-        background-color: rgba(0, 0, 0, 0.317);
-        color: white;
-        transition: .3s ease-in-out;
-    }
-
-    .category-bttn:hover {
-        background-color: white;
-        color: black;
-    }
-
-    .footer-nav,
-    a {
-        text-decoration: none;
-        color: #737373;
-    }
-
-    .footer-nav,
-    a:hover {
-        color: #d4a83a;
-    }
-    .footer-icon {
-        transition: .3s ease-in-out;
-    }
-
-    .footer-icon:hover {
-        background-color: #d4a83a;
-    }
-</style>
 
 <body>
-    <header style="position: sticky; z-index: 1; top: 0;">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <header style="position: sticky; z-index: 1020; top: 0;">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#">Lajotam Fashion</a>
+                <a class="navbar-brand fw-bold fs-4" href="#" style="color: black;">
+                    <span style="color: var(--accent-color); margin-right: 5px;">
+                        <i class="bi bi-gem"></i> </span>
+                    Lajotam Fashion
+                </a>
                 <div class="d-flex gap-2 align-items-center">
-                    <div class="d-flex  d-lg-none d-md-block d-sm-block d-xm-block ">
-                        <a href="#" class="header-icon px-2 py-1 rounded-3"><img src="img/download (8).svg" alt=""></a>
-                        <a href="#" class="header-icon px-2 py-1 rounded-3"><img src="img/download (7).svg" alt=""></a>
-                        <a href="#" class="header-icon px-2 py-1 rounded-3"><img src="img/download (6).svg" alt=""></a>
+                    <div class="d-flex d-lg-none">
+                        <a href="#" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-search"
+                                style="color: black;"></i></a>
+                        <a href="signUp.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-person"
+                                style="color: black;"></i></a>
+                        <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
+                                style="color: black;"></i></a>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                        <img src="img/menu (4).png" alt="">
-
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" href="#">Men</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" aria-current="page" href="#">Women</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" href="#">Jewelry</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" aria-current="page" href="#">Footwear</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" href="#">Lace</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" href="#">Sale</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold" href="#">Contact</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link active fw-semibold" aria-current="page"
+                                href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="jewelry.html">Jewelry</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="lace.html">Lace</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
                     </ul>
-                    <div class="d-flex gap-3 d-lg-block d-md-none d-sm-none d-xm-none ">
-                        <a href="#" class="header-icon px-2 py-2 rounded-3"><img src="img/download (8).svg" alt=""></a>
-                        <a href="signup.html" class="header-icon px-2 py-2 rounded-3"><img src="img/download (7).svg"
-                                alt=""></a>
-                        <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><img src="img/download (6).svg"
-                                alt=""></a>
+                    <div class="d-flex gap-3 d-none d-lg-block">
+                        <a href="#" class="header-icon px-2 py-2 rounded-3"><i class="bi bi-search text-dark"></i></a>
+                        <a href="signUp.html" class="header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-person text-dark"></i></a>
+                        <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <section
-            style="background-image: url('img/imgi_19_pngtree-a-mo.jpg'); height: 91.6vh; background-repeat: no-repeat; background-position: center; background-size: cover; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);">
-            <div class="text-center d-flex align-items-center justify-content-center flex-column pt-5"
-                style="height: 75vh; color: white;">
-                <h1 class="fw-bold m-0 pb-3 fs-1">Lajotam Fashion</h1>
-                <p class="m-0 pb-3 fs-3">Unveil your elegance. Define your style.</p>
-                <p style="font-size: 20px;" class="w-50 m-0">Discover luxury fashion, exquisite jewelry, and timeless
-                    accessories that celebrate your unique beauty.</p>
-                <button class="hero-bttn btn btn-small mt-3 fw-bold py-2 px-3"
-                    style="background-color: #d4a83a; color: white;">Shop Now</button>
+        <section class="hero-section">
+            <div class="hero-content w-75">
+                <h1 class="fw-bold m-0 pb-3 display-1">Lajotam Fashion</h1>
+                <p class="m-0 pb-3 fs-3 text-uppercase letter-spacing-1">Unveil your elegance. Define your style.</p>
+                <p style="font-size: 20px;" class="w-75 mx-auto m-0">Discover luxury fashion, exquisite jewelry, and
+                    timeless accessories that celebrate your unique beauty.</p>
+                <button class="hero-bttn btn mt-4 fw-bold">Shop The Collection</button>
             </div>
         </section>
 
-        <section style="background-color: #fafafa; " class="pb-5">
+        <section style="background-color: var(--background-light);" class="py-5">
             <div class="text-center pt-5">
                 <h2 class="fw-semibold fs-1">Shop by Category</h2>
                 <p class="fs-5 pb-5">Explore our curated collections of premium fashion pieces</p>
             </div>
 
             <div class="container">
-                <div class="row mb-5">
-                    <div class="col-lg-4">
-                        <div style="background-image: url('img/category-men-CRQ-xV22.jpg'); height: 50vh; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
-                            class="collection-box w-100 rounded-3 mb-3">
-                            <div class="text-center"
-                                style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 80vh;">
-                                <h5 style="color: white;">Men's Wear</h5>
-                                <button class="category-bttn btn btn-small py-2 px-3 fw-semibold">Shop
-                                    Now</button>
+                <div class="row mb-4 g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div style="background-image: url('img/category-men-CRQ-xV22.jpg'); height: 40vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                            class="collection-box w-100 rounded-3">
+                            <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
+                                <h5 class="text-white fs-4">Men's Wear</h5>
+                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div style="background-image: url('img/category-lace-DGCm3xqt.jpg'); height: 50vh; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
-                            class="collection-box w-100 rounded-3 mb-3">
-                            <div class="text-center"
-                                style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 80vh;">
-                                <h5 style="color: white;">Women's Lace Dresses</h5>
-                                <button class="category-bttn btn btn-small py-2 px-3 fw-semibold">Shop
-                                    Now</button>
+                    <div class="col-lg-4 col-md-6">
+                        <div style="background-image: url('img/category-lace-DGCm3xqt.jpg'); height: 40vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                            class="collection-box w-100 rounded-3">
+                            <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
+                                <h5 class="text-white fs-4">Women's Lace Dresses</h5>
+                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div style="background-image: url('img/imgi_86_pngtree-jewelry-diamond-rings-and-necklaces-show-in-luxury-retail-store-window-picture-image_15462041.jpg'); height: 50vh; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
-                            class="collection-box w-100 rounded-3 mb-3">
-                            <div class="text-center"
-                                style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 80vh;">
-                                <h5 style="color: white;">Luxury Jewelry</h5>
-                                <button class="category-bttn btn btn-small py-2 px-3 fw-semibold">Shop
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div style="background-image: url('img/imgi_51_pngtree-elegant-woman-holding-stylish-black-bag-with-red-scarf-and-shoes-photo-photo-image_69564532.webp'); height: 50vh; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
-                            class="collection-box w-100 rounded-3 mb-3">
-                            <div class="text-center"
-                                style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 80vh;">
-                                <h5 style="color: white;">Footwear Collection</h5>
-                                <button class="category-bttn btn btn-small py-2 px-3 fw-semibold">Shop
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div style="background-image: url('img/imgi_137_pngtree-portrait-of-fashion-couple-on-black-background-attractive-style-studio-photo-picture-image_12706752.jpg'); height: 50vh; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
-                            class="collection-box w-100 rounded-3 mb-3">
-                            <div class="text-center"
-                                style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 80vh;">
-                                <h5 style="color: white;">Couple Styles</h5>
-                                <button class="category-bttn btn btn-small py-2 px-3 fw-semibold">Shop
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div style="background-image: url('img/imgi_134_pngtree-a-s.jpg'); height: 50vh; background-repeat: no-repeat; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
-                            class="collection-box w-100 rounded-3 mb-3">
-                            <div class="text-center"
-                                style="display: flex; align-items: center; flex-direction: column; justify-content: center; height: 80vh;">
-                                <h5 style="color: white;">Accessories</h5>
-                                <button class="category-bttn btn btn-small py-2 px-3 fw-semibold">Shop
-                                    Now</button>
+                    <div class="col-lg-4 col-md-12">
+                        <div style="background-image: url('img/imgi_86_pngtree-jewelry-diamond-rings-and-necklaces-show-in-luxury-retail-store-window-picture-image_15462041.jpg'); height: 40vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                            class="collection-box w-100 rounded-3">
+                            <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
+                                <h5 class="text-white fs-4">Luxury Jewelry</h5>
+                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="row mb-5 g-4">
+                    <div class="col-lg-6 col-md-12">
+                        <div style="background-image: url('img/imgi_51_pngtree-elegant-woman-holding-stylish-black-bag-with-red-scarf-and-shoes-photo-photo-image_69564532.webp'); height: 50vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                            class="collection-box w-100 rounded-3">
+                            <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
+                                <h5 class="text-white fs-4">Luxury Footwear Collection</h5>
+                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div style="background-image: url('img/imgi_137_pngtree-portrait-of-fashion-couple-on-black-background-attractive-style-studio-photo-picture-image_12706752.jpg'); height: 50vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                            class="collection-box w-100 rounded-3">
+                            <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
+                                <h5 class="text-white fs-4">Couple Styles</h5>
+                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div style="background-image: url('img/imgi_134_pngtree-a-s.jpg'); height: 50vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                            class="collection-box w-100 rounded-3">
+                            <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
+                                <h5 class="text-white fs-4">Accessories</h5>
+                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section>
+        <section class="py-5 bg-white">
             <div class="text-center">
-                <h2 class="fw-semibold fs-1 pt-5">Featured Collection</h2>
+                <h2 class="fw-semibold fs-1">Featured Collection</h2>
                 <p class="fs-5 pb-5" style="color: #807f7f;">Handpicked pieces from our luxury collection</p>
             </div>
 
-            <div class="px-5">
-                <div class="row mb-3">
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/imgi_227_IMG_10102.jpg" alt="" class="collection-pic w-100 rounded-top-3"
-                                style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
+            <div class="container px-5">
+                <div class="row mb-3 justify-content-center g-4">
+                    <div class="col-lg-3 col-md-6 col-sm-6 featured-card-wrapper">
+                        <div class="collection-box w-100 rounded-3" style="border: 1px solid var(--border-color);">
+                            <img src="img/imgi_227_IMG_10102.jpg" alt="Silk Evening Dress"
+                                class="collection-pic w-100 rounded-top-3" style="height: 300px; object-fit: cover;">
+                            <div class="container-fluid pb-3 p-3">
                                 <p class="m-0 pt-3 fw-semibold fs-5">Silk Evening Dress</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
+                                <p class="m-0 fw-bold fs-5 pb-2" style="color: var(--accent-color);">$299.99</p>
+                                <a href="#"><button style="background-color: var(--accent-color); border: none;"
+                                        class="w-100 btn">
                                         <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
+                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; color: white;">
+                                            <i class="bi bi-cart-fill"></i>
+                                            <small class="fw-semibold" style="font-size: 17px;">Add to Cart</small>
                                         </div>
                                     </button></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/diamond pendant.jpg" alt="" class="collection-pic w-100 rounded-top-3"
-                                style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 featured-card-wrapper">
+                        <div class="collection-box w-100 rounded-3" style="border: 1px solid var(--border-color);">
+                            <img src="img/diamond pendant.jpg" alt="Diamond Pendant"
+                                class="collection-pic w-100 rounded-top-3" style="height: 300px; object-fit: cover;">
+                            <div class="container-fluid pb-3 p-3">
                                 <p class="m-0 pt-3 fw-semibold fs-5">Diamond Pendant</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
+                                <p class="m-0 fw-bold fs-5 pb-2" style="color: var(--accent-color);">$299.99</p>
+                                <a href="#"><button style="background-color: var(--accent-color); border: none;"
+                                        class="w-100 btn">
                                         <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
+                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; color: white;">
+                                            <i class="bi bi-cart-fill"></i>
+                                            <small class="fw-semibold" style="font-size: 17px;">Add to Cart</small>
                                         </div>
                                     </button></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 featured-card-wrapper">
+                        <div class="collection-box w-100 rounded-3" style="border: 1px solid var(--border-color);">
                             <img src="img/imgi_51_pngtree-elegant-woman-holding-stylish-black-bag-with-red-scarf-and-shoes-photo-photo-image_69564532.webp"
-                                alt="" class="collection-pic w-100 rounded-top-3"
+                                alt="Designer Leather Heels" class="collection-pic w-100 rounded-top-3"
                                 style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
+                            <div class="container-fluid pb-3 p-3">
                                 <p class="m-0 pt-3 fw-semibold fs-5">Designer Leather Heels</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
+                                <p class="m-0 fw-bold fs-5 pb-2" style="color: var(--accent-color);">$299.99</p>
+                                <a href="#"><button style="background-color: var(--accent-color); border: none;"
+                                        class="w-100 btn">
                                         <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
+                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; color: white;">
+                                            <i class="bi bi-cart-fill"></i>
+                                            <small class="fw-semibold" style="font-size: 17px;">Add to Cart</small>
                                         </div>
                                     </button></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100  rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/suit.jpg" alt="" class="collection-pic w-100 rounded-top-3"
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 featured-card-wrapper">
+                        <div class="collection-box w-100 rounded-3" style="border: 1px solid var(--border-color);">
+                            <img src="img/suit.jpg" alt="Premium Wool Suit" class="collection-pic w-100 rounded-top-3"
                                 style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
+                            <div class="container-fluid pb-3 p-3">
                                 <p class="m-0 pt-3 fw-semibold fs-5">Premium Wool Suit</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
+                                <p class="m-0 fw-bold fs-5 pb-2" style="color: var(--accent-color);">$299.99</p>
+                                <a href="#"><button style="background-color: var(--accent-color); border: none;"
+                                        class="w-100 btn">
                                         <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
+                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; color: white;">
+                                            <i class="bi bi-cart-fill"></i>
+                                            <small class="fw-semibold" style="font-size: 17px;">Add to Cart</small>
                                         </div>
                                     </button></a>
                             </div>
                         </div>
                     </div>
 
+                </div>
 
-
-
-
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/imgi_133_pngtree-a-r.jpg" alt="" class="collection-pic w-100 rounded-top-3"
-                                style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
-                                <p class="m-0 pt-3 fw-semibold fs-5">Lace Evening Gown</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
-                                        <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
-                                        </div>
-                                    </button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/Gold Statement Necklace.jpg" alt="" class="collection-pic w-100 rounded-top-3"
-                                style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
-                                <p class="m-0 pt-3 fw-semibold fs-5">Gold Statement Necklace</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
-                                        <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
-                                        </div>
-                                    </button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/Italian Leather Bag.jpg" alt="" class="collection-pic w-100 rounded-top-3"
-                                style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
-                                <p class="m-0 pt-3 fw-semibold fs-5">Italian Leather Bag</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
-                                        <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
-                                        </div>
-                                    </button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-6">
-                        <div class="collection-box w-100 rounded-3 mb-3" style="border: 1px solid grey;">
-                            <img src="img/Cashmere Scarf.jpg" alt="" class="collection-pic w-100 rounded-top-3"
-                                style="height: 300px; object-fit: cover;">
-                            <div class="container-fluid pb-3">
-                                <p class="m-0 pt-3 fw-semibold fs-5">Cashmere Scarf</p>
-                                <p class="m-0 fw-bold fs-5 pb-2" style="color: #d4a83a;">$299.99</p>
-                                <a href="#"><button style="background-color: #d4a83a; border: none;" class="w-100 btn">
-                                        <div
-                                            style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
-                                            <img src="img/shopping-cart (1).png" alt="" style="width: 25px;">
-                                            <small class="fw-semibold" style="font-size: 17px; color: white;">Add to
-                                                Cart
-                                            </small>
-                                        </div>
-                                    </button></a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center pt-4">
+                    <button class="hero-bttn btn fw-bold">View All Featured</button>
                 </div>
             </div>
         </section>
 
 
-        <section style="background-color: #fdfaf5;">
+        <section style="background-color: #fdfaf5;" class="py-5">
             <div class="w-75 d-flex flex-column justify-content-center mx-auto pb-5 pt-3">
                 <div class="text-center">
                     <h2 class="fw-semibold fs-1 pt-5">Stay in Style</h2>
@@ -424,8 +390,8 @@
                 <div class="d-flex gap-4 justify-content-center pb-3">
                     <input type="email" name="emial" id="address" placeholder="Enter your email here"
                         class="input-email w-75 form-control" />
-                    <button class="btn fw-semibold py-2 px-3"
-                        style="background-color: #d4a83a; color: white;">Subscribe</button>
+                    <button class="btn fw-semibold py-2 px-3 hero-bttn"
+                        style="background-color: var(--accent-color); color: white;">Subscribe</button>
                 </div>
                 <p class="text-center" style="color: #807f7f;">Be one of our fashion enthusiasts</p>
             </div>
@@ -459,35 +425,36 @@
                     <div class="col-lg-4 ">
                         <h4 class="pb-2">Contact Us</h4>
                         <div>
-                            <div class="d-flex flex-column gap-2">
-                                <a href="mailto:olamilekanadewuyi90@gmail.com? subject=Hello!">Drop an Email</a>
-                                <a href="tel:+2349163730197">Call us</a>
-                                <a href="https://wa.me/9163730197">Connect with us on WhatsApp</a>
+                            <div class="d-flex flex-column gap-2 list-unstyled">
+                                <li class="footer-nav"><a
+                                        href="mailto:olamilekanadewuyi90@gmail.com? subject=Hello!">Drop an Email</a>
+                                </li>
+                                <li class="footer-nav"><a href="tel:+2349163730197">Call us</a></li>
+                                <li class="footer-nav"><a href="https://wa.me/9163730197">Connect with us on
+                                        WhatsApp</a></li>
                             </div>
                             <p style="color: #737373;" class="mt-2">Address: Ogbomoso, Oyo State, Nigeria</p>
                         </div>
 
                         <div class="d-flex gap-3 pt-3">
-                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><img src="img/instagram (2).png" alt="" class="me-1"></a>
-                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><img src="img/facebook (2).png" alt=""></a>
-                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><img src="img/twitter (2).png" alt=""></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-instagram text-white"></i></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-facebook text-white"></i></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-twitter text-white"></i></a>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-            <hr class="m-0">
         </div>
 
         <p class="pt-4 text-center m-0 pb-5">© 2025 Lajotam Fashion. All rights reserved.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-    crossorigin="anonymous"></script>
 
 </html>
