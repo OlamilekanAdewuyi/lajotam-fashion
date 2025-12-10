@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    :root {
+        --accent-color: #d4a83a;
+        --text-color: #737373;
+        --border-color: rgba(128, 128, 128, 0.25);
+        --background-light: #fafafa;
+    }
+
+    body {
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar {
+        background-color: white !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+
+    .nav-item .nav-link:hover,
+    .footer-nav a:hover,
+    .header-icon:hover,
+    .product-price {
+        color: var(--accent-color) !important;
+    }
+
+    .header-icon:hover {
+        background-color: var(--accent-color);
+    }
+
+    footer li a {
+        color: #737373;
+        text-decoration: none;
+    }
+
+    .footer-icon:hover {
+        background-color: var(--accent-color);
+    }
+
+    .btn-primary-accent {
+        background-color: var(--accent-color);
+        border: none;
+        color: white;
+        transition: 0.3s ease-in-out;
+    }
+
+    .btn-primary-accent:hover {
+        background-color: #c09635;
+        transform: translateY(-1px);
+    }
+
+    .product-details-container {
+        padding-top: 50px;
+    }
+
+    .main-image {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .thumbnail-image {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.2s ease-in-out;
+        border-radius: 4px;
+    }
+
+    .thumbnail-image:hover,
+    .thumbnail-image.active {
+        border-color: var(--accent-color);
+    }
+
+    .selector-box {
+        border: 1px solid var(--border-color);
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .selector-box.active {
+        border-color: var(--accent-color);
+        background-color: var(--background-light);
+    }
+</style>
+
+<body>
+    <header style="position: sticky; z-index: 1020; top: 0;">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="index.html" style="color: black;">
+                    <span style="color: var(--accent-color); margin-right: 5px;">
+                        <i class="bi bi-gem"></i> </span>
+                    Lajotam Fashion
+                </a>
+                <div class="d-flex gap-2 align-items-center">
+                    <div class="d-flex d-lg-none">
+                        <a href="signUp.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-person"
+                                style="color: black;"></i></a>
+                        <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
+                                style="color: black;"></i></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="jewelry.html">Jewelry</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="lace.html">Lace</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
+                    </ul>
+                    <div class="d-flex gap-3 d-none d-lg-block">
+                        <a href="signUp.html" class="profile header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-person text-dark"></i>
+                            </a>
+
+                        
+                        <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-3">
+        <div class="container product-details-container">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html"
+                            style="color: var(--text-color); text-decoration: none;">Home</a></li>
+                    <li class="breadcrumb-item"><a href="women.html"
+                            style="color: var(--text-color); text-decoration: none;">Women</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">A-Line Silk Dress</li>
+                </ol>
+            </nav>
+
+            <div class="row g-5">
+                <div class="col-lg-6 col-md-12">
+                    <div class="d-flex flex-column">
+                        <img src="Images/women/a-line-silk-dress.jpg" alt="A-Line Silk Dress Front"
+                            class="main-image mb-3" id="mainProductImage">
+
+                        <!-- <div class="row g-2 justify-content-center">
+                            <div class="col-3">
+                                <img src="img/women-dress-1.jpg" alt="Thumbnail 1" class="thumbnail-image active"
+                                    data-img-src="img/women-dress-1.jpg">
+                            </div>
+                            <div class="col-3">
+                                <img src="img/women-dress-1-side.jpg" alt="Thumbnail 2" class="thumbnail-image"
+                                    data-img-src="img/women-dress-1-side.jpg">
+                            </div>
+                            <div class="col-3">
+                                <img src="img/women-dress-1-back.jpg" alt="Thumbnail 3" class="thumbnail-image"
+                                    data-img-src="img/women-dress-1-back.jpg">
+                            </div>
+                            <div class="col-3">
+                                <img src="img/women-dress-1-detail.jpg" alt="Thumbnail 4" class="thumbnail-image"
+                                    data-img-src="img/women-dress-1-detail.jpg">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <h1 class="fw-bold mb-2">Luxe A-Line Silk Dress</h1>
+                    <p class="fs-4 fw-semibold product-price mb-3">$320.00</p>
+                    <p class="mb-4" style="color: var(--text-color);">
+                        A timeless A-line dress crafted from luxurious Italian silk. Featuring a delicate cowl neck and
+                        a bias cut for an elegant drape. Perfect for evening wear or special occasions.
+                    </p>
+
+                    <hr>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Size:</label>
+                        <div class="d-flex flex-wrap">
+                            <div class="selector-box active">XS</div>
+                            <div class="selector-box">S</div>
+                            <div class="selector-box">M</div>
+                            <div class="selector-box">L</div>
+                            <div class="selector-box">XL</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Color: Red Wine</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            <div class="rounded-circle"
+                                style="width: 30px; height: 30px; background-color: #900C3F; border: 2px solid var(--accent-color);">
+                            </div>
+                            <div class="rounded-circle"
+                                style="width: 30px; height: 30px; background-color: #36454F; border: 1px solid var(--border-color);">
+                            </div>
+                            <div class="rounded-circle"
+                                style="width: 30px; height: 30px; background-color: #D4AF37; border: 1px solid var(--border-color);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-5 gap-3">
+                        <label class="form-label fw-semibold mb-0">Qty:</label>
+                        <input type="number" value="1" min="1" class="form-control" style="width: 80px;">
+                        <button class="btn btn-primary-accent btn-lg flex-grow-1 fw-bold">
+                            <div
+                                style="display: flex; align-items: center; justify-content: center; gap: 10px; color: white;">
+                                <i class="bi bi-cart-fill"></i>
+                                <small class="fw-semibold" style="font-size: 17px;">Add to Cart</small>
+                            </div>
+                        </button>
+                    </div>
+
+                    <ul class="nav nav-tabs mb-3" id="productInfoTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
+                                data-bs-target="#description" type="button" role="tab" aria-controls="description"
+                                aria-selected="true" style="color: black;">Details</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping"
+                                type="button" role="tab" aria-controls="shipping" aria-selected="false"
+                                style="color: black;">Shipping</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="productInfoTabContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel"
+                            aria-labelledby="description-tab">
+                            <ul>
+                                <li>Material: 100% Italian Crêpe de Chine Silk.</li>
+                                <li>Care: Dry clean only.</li>
+                                <li>Fit: True to size, bias-cut for fluid movement.</li>
+                                <li>Origin: Responsibly made in Europe.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
+                            <p>Standard shipping (5-7 business days) is complimentary for all orders over $150.</p>
+                            <p>Express shipping (2-3 business days) available for an additional fee.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="background: black; color: #737373;">
+        <div class="container">
+            <div class="container py-5 px-4">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="pb-2">About Lajotam</h4>
+                        <p style="color: #737373; font-size: 18px;">
+                            Lajotam Fashion brings you the finest collection of luxury fashion, jewelry, and
+                            accessories.
+                            We celebrate your unique style with timeless elegance.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="pb-2">Customer Service</h4>
+                        <ul class="list-unstyled" style="line-height: 30px; color: #737373;">
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Contact Us</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Shipping & Returns</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Size Guide</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">FAQ</a></li>
+                            <li class="footer-nav"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <h4 class="pb-2">Contact Us</h4>
+                        <div>
+                            <div class="d-flex flex-column gap-2 list-unstyled">
+                                <li class="footer-nav"><a
+                                        href="mailto:olamilekanadewuyi90@gmail.com? subject=Hello!">Drop an Email</a>
+                                </li>
+                                <li class="footer-nav"><a href="tel:+2349163730197">Call us</a></li>
+                                <li class="footer-nav"><a href="https://wa.me/9163730197">Connect with us on
+                                        WhatsApp</a></li>
+                            </div>
+                            <p style="color: #737373;" class="mt-2">Address: Ogbomoso, Oyo State, Nigeria</p>
+                        </div>
+
+                        <div class="d-flex gap-3 pt-3">
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-instagram text-white"></i></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-facebook text-white"></i></a>
+                            <a href="#" class="footer-icon px-2 py-1 rounded-3"><i
+                                    class="bi bi-twitter text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="pt-4 text-center m-0 pb-5">© 2025 Lajotam Fashion. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // --- Image Swapping Logic ---
+        document.querySelectorAll('.thumbnail-image').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function () {
+                // Update main image source
+                document.getElementById('mainProductImage').src = this.getAttribute('data-img-src');
+
+                // Update active state for thumbnails
+                document.querySelectorAll('.thumbnail-image').forEach(img => img.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // --- Selector Active State Logic (Size/Color) ---
+        document.querySelectorAll('.selector-box').forEach(box => {
+            box.addEventListener('click', function () {
+                // Find all sibling selector boxes and remove active class
+                const parent = this.parentNode;
+                parent.querySelectorAll('.selector-box').forEach(sibling => sibling.classList.remove('active'));
+
+                // Set active class on clicked box
+                this.classList.add('active');
+            });
+        });
+
+        // NOTE: For a real application, clicking the color circle should also update the product image.
+    </script>
+</body>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+
+</html>

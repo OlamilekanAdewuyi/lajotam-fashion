@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management | Lajotam Fashion</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+            --accent-color: #d4a83a; 
+            --text-dark: #4a4a4a;
+        }
+
+        /* Accent Button Styling */
+        .btn-primary-accent {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary-accent:hover {
+            background-color: #c09635;
+        }
+        
+        /* Typography Styling */
+        .card-title {
+            color: var(--accent-color) !important;
+        }
+        .text-header-dark {
+            color: var(--text-dark) !important;
+        }
+        .breadcrumb-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="py-3 mb-4 border-bottom shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h3 class="m-0 fw-bold text-header-dark"><span style="color: var(--accent-color);"><i class="bi bi-gem"></i></span> Lajotam Fashion</h3>
+            <a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
+        </div>
+    </header>
+
+    <div class="container py-4">
+        
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="user-dashboard.html">My Account</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Management</li>
+            </ol>
+        </nav>
+
+        <h2 class="fw-bold display-5 mb-4 text-header-dark">Account Management</h2>
+        <p class="lead text-muted mb-5">Manage your core account credentials and deletion settings.</p>
+
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-lg-6 col-md-8">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold"><i class="bi bi-pencil-square me-2"></i> Edit Details / Security</h5>
+                        <hr>
+                        <p class="card-text text-muted">Update your primary account details or change your secure password.</p>
+                        <button class="btn btn-sm btn-primary-accent">Change Password</button>
+                        <button class="btn btn-sm btn-outline-secondary">Update Personal Info</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-8">
+                <div class="card h-100 border border-danger shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold text-danger"><i class="bi bi-trash me-2"></i> Delete Account</h5>
+                        <hr>
+                        <p class="card-text text-muted mb-4">
+                            Proceed with caution. Permanently delete your account and all associated data. This action is **irreversible**.
+                        </p>
+                        <button type="button" class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#deleteAccountConfirmModal">
+                            Permanently Delete Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="deleteAccountConfirmModal" tabindex="-1" aria-labelledby="deleteAccountConfirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger fw-bold" id="deleteAccountConfirmModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger fw-bold">Are you ABSOLUTELY sure? This action is irreversible.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="finalDeleteButton" class="btn btn-danger">I Understand, Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

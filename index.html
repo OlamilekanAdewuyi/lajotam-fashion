@@ -57,6 +57,10 @@
             background-color: #c09635;
         }
 
+        .by-category-bttn:active {
+            color: black;
+        }
+
         .category-bttn {
             background-color: rgba(0, 0, 0, 0.5);
             border: 1px solid white;
@@ -169,11 +173,32 @@
                     Lajotam Fashion
                 </a>
                 <div class="d-flex gap-2 align-items-center">
-                    <div class="d-flex d-lg-none">
-                        <a href="signUp.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-person"
-                                style="color: black;"></i></a>
-                        <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
-                                style="color: black;"></i></a>
+                    <div class="d-flex gap-2 d-lg-none  align-items-center">
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-2 py-2 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="dropdown-item fw-semibold" href="signIn.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="signUp.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="my-account.html">My Account Dashboard</a></li>
+                            </ul>
+                        </div>
+
+                        <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -193,27 +218,34 @@
                         <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
                     </ul>
-                    <div class="d-flex gap-3 d-none d-lg-block">
-                        <a href="#" class="header-icon px-2 py-2 rounded-3"><i class="bi bi-search text-dark"></i></a>
-                        <a href="signUp.html" class="profile header-icon px-2 py-2 rounded-3"><i
-                                class="bi bi-person text-dark"></i>
+                    <div class="d-flex gap-3 d-none d-lg-block align-items-center">
 
-                        </a>
 
-                        <div class="dropdown d-none">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown button
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-2 py-2 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="dropdown-item fw-semibold" href="signIn.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="signUp.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="my-account.html">My Account Dashboard</a></li>
                             </ul>
                         </div>
 
                         <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
                                 class="bi bi-bag text-dark"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -243,7 +275,8 @@
                             class="collection-box w-100 rounded-3">
                             <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
                                 <h5 class="text-white fs-4">Men's Wear</h5>
-                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                                <a href="men.html" class="by-category-bttn"><button
+                                        class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -251,8 +284,9 @@
                         <div style="background-image: url('img/category-lace-DGCm3xqt.jpg'); height: 40vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
                             class="collection-box w-100 rounded-3">
                             <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
-                                <h5 class="text-white fs-4">Women's Lace Dresses</h5>
-                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                                <h5 class="text-white fs-4">Women's Dresses</h5>
+                                <a href="women.html" class="by-category-bttn"><button
+                                        class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -261,7 +295,8 @@
                             class="collection-box w-100 rounded-3">
                             <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
                                 <h5 class="text-white fs-4">Luxury Jewelry</h5>
-                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                                <a href="jewelry.html" class="by-category-bttn"><button
+                                        class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -273,16 +308,18 @@
                             class="collection-box w-100 rounded-3">
                             <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
                                 <h5 class="text-white fs-4">Luxury Footwear Collection</h5>
-                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                                <a href="footwear.html" class="by-category-bttn"><button
+                                        class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div style="background-image: url('img/imgi_137_pngtree-portrait-of-fashion-couple-on-black-background-attractive-style-studio-photo-picture-image_12706752.jpg'); height: 50vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
+                        <div style="background-image: url('Images/lace/Exquisite-Lace-Fabrics.jpg'); height: 50vh; background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.479);"
                             class="collection-box w-100 rounded-3">
                             <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
-                                <h5 class="text-white fs-4">Couple Styles</h5>
-                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                                <h5 class="text-white fs-4">Lace Materials</h5>
+                                <a href="lace.html" class="by-category-bttn"><button
+                                        class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button></a>
                             </div>
                         </div>
                     </div>
@@ -291,7 +328,8 @@
                             class="collection-box w-100 rounded-3">
                             <div class="text-center d-flex align-items-center flex-column justify-content-center h-100">
                                 <h5 class="text-white fs-4">Accessories</h5>
-                                <button class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button>
+                                <a href="#accessories" class="by-category-bttn"><button
+                                        class="category-bttn btn btn-small py-2 px-4 fw-semibold">Shop Now</button></a>
                             </div>
                         </div>
                     </div>
