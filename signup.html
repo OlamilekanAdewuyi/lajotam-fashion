@@ -310,26 +310,82 @@
     </div>
 
     <script>
-        function signUp() {
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            const errorMessage = document.getElementById('requestToFillAllInput');
 
-            if (fullName && email && password && confirmPassword) {
-                if (password !== confirmPassword) {
-                    errorMessage.textContent = "Error: Passwords do not match!";
-                    errorMessage.style.display = 'block';
-                } else {
-                    errorMessage.style.display = 'none';
-                    alert(`Welcome, ${fullName}! Account created successfully (Simulated).`);
+            function signUp() {
+                const fullName = document.getElementById("fullName").value.trim();
+                const email = document.getElementById("email").value.trim().toLowerCase();
+                const password = document.getElementById("password").value;
+                const confirmPassword = document.getElementById("confirmPassword").value;
+
+                const errorBox = document.getElementById("requestToFillAllInput");
+
+                function showError(msg) {
+                    errorBox.style.display = "block";
+                    errorBox.textContent = msg;
                 }
-            } else {
-                errorMessage.textContent = "Error: Please fill all fields!";
-                errorMessage.style.display = 'block';
+
+                errorBox.style.display = "none";
+
+
+                if (fullName === "" || email === "" || password === "" || confirmPassword === "") {
+                    showError("Error: Please fill all fields!");
+                    return;
+                }
+
+                if (fullName.split(" ").length < 2) {
+                    showError("Error: Please enter your full name.");
+                    return;
+                }
+
+                if (!email.includes("@") || !email.includes(".")) {
+                    showError("Error: Enter a valid email address.");
+                    return;
+                }
+
+                if (password.length < 6) {
+                    showError("Error: Password must be at least 6 characters.");
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    showError("Error: Passwords do not match!");
+                    return;
+                }
+
+                
+                let users = JSON.parse(localStorage.getItem("lajotamUsers")) || [];
+
+                const emailExists = users.some((user) => {
+                    return user.email === email;
+                });
+
+                if (emailExists) {
+                    showError("Error: An account with this email already exists!");
+                    return;
+                }
+
+                const newUser = {
+                    fullName: fullName,
+                    email: email,
+                    password: password   
+                };
+
+                users.push(newUser);
+
+                localStorage.setItem("lajotamUsers", JSON.stringify(users));
+
+                alert("Welcome " + fullName + "! Your account has been created successfully.");
+
+                document.getElementById("fullName").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("password").value = "";
+                document.getElementById("confirmPassword").value = "";
+
+                errorBox.style.display = "none";
+
+                window.location.href = "signIn.html";
             }
-        }
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

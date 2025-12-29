@@ -1,87 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Account Management | Lajotam Fashion</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
     <style>
         :root {
-            --accent-color: #d4a83a; 
+            --accent-color: #d4a83a;
             --text-dark: #4a4a4a;
         }
 
-        /* Accent Button Styling */
         .btn-primary-accent {
             background-color: var(--accent-color);
             color: white;
             border: none;
-            transition: background-color 0.3s ease;
         }
+
         .btn-primary-accent:hover {
             background-color: #c09635;
         }
-        
-        /* Typography Styling */
+
         .card-title {
             color: var(--accent-color) !important;
         }
+
         .text-header-dark {
             color: var(--text-dark) !important;
         }
+
         .breadcrumb-item a {
             color: var(--accent-color);
             text-decoration: none;
         }
     </style>
 </head>
+
 <body>
 
     <header class="py-3 mb-4 border-bottom shadow-sm">
         <div class="container d-flex justify-content-between align-items-center">
-            <h3 class="m-0 fw-bold text-header-dark"><span style="color: var(--accent-color);"><i class="bi bi-gem"></i></span> Lajotam Fashion</h3>
+            <h3 class="m-0 fw-bold text-header-dark">
+                <span style="color: var(--accent-color);">
+                    <i class="bi bi-gem"></i>
+                </span>
+                Lajotam Fashion
+            </h3>
             <a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Home</a>
         </div>
     </header>
 
     <div class="container py-4">
-        
+
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="user-dashboard.html">My Account</a></li>
+                <li class="breadcrumb-item">
+                    <a href="user-dashboard.html">My Account</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page">Management</li>
             </ol>
         </nav>
 
         <h2 class="fw-bold display-5 mb-4 text-header-dark">Account Management</h2>
-        <p class="lead text-muted mb-5">Manage your core account credentials and deletion settings.</p>
+        <p class="lead text-muted mb-5">
+            Manage your core account credentials and deletion settings.
+        </p>
 
         <div class="row g-4 justify-content-center">
-            
+
             <div class="col-lg-6 col-md-8">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body p-4">
-                        <h5 class="card-title fw-bold"><i class="bi bi-pencil-square me-2"></i> Edit Details / Security</h5>
-                        <hr>
-                        <p class="card-text text-muted">Update your primary account details or change your secure password.</p>
-                        <button class="btn btn-sm btn-primary-accent">Change Password</button>
-                        <button class="btn btn-sm btn-outline-secondary">Update Personal Info</button>
+                        <h5 class="card-title fw-bold">
+                            <i class="bi bi-pencil-square me-2"></i>
+                            Edit Details / Security
+                        </h5>
+                        <hr />
+                        <p class="card-text text-muted">
+                            Update your primary account details or change your secure password.
+                        </p>
+
+                        <button class="btn btn-sm btn-primary-accent me-2" data-bs-toggle="modal"
+                            data-bs-target="#changePasswordModal">
+                            Change Password
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#updateProfileModal">
+                            Update Personal Info
+                        </button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-6 col-md-8">
                 <div class="card h-100 border border-danger shadow-sm">
                     <div class="card-body p-4">
-                        <h5 class="card-title fw-bold text-danger"><i class="bi bi-trash me-2"></i> Delete Account</h5>
-                        <hr>
-                        <p class="card-text text-muted mb-4">
-                            Proceed with caution. Permanently delete your account and all associated data. This action is **irreversible**.
+                        <h5 class="fw-bold text-danger">
+                            <i class="bi bi-trash me-2"></i>
+                            Delete Account
+                        </h5>
+                        <hr />
+                        <p class="text-muted mb-4">
+                            Proceed with caution. Permanently delete your account and all associated data.
+                            <strong class="text-danger">This action is irreversible.</strong>
                         </p>
-                        <button type="button" class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#deleteAccountConfirmModal">
+
+                        <button class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteAccountConfirmModal">
                             Permanently Delete Account
                         </button>
                     </div>
@@ -90,23 +120,173 @@
 
         </div>
     </div>
-    <div class="modal fade" id="deleteAccountConfirmModal" tabindex="-1" aria-labelledby="deleteAccountConfirmModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="changePasswordModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-danger fw-bold" id="deleteAccountConfirmModalLabel">Confirm Deletion</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title fw-bold">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-danger fw-bold">Are you ABSOLUTELY sure? This action is irreversible.</p>
+                    <input type="password" id="newPasswordInput" class="form-control"
+                        placeholder="Enter new password" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" id="finalDeleteButton" class="btn btn-danger">I Understand, Delete Account</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary-accent" id="confirmChangePassword">
+                        Update Password
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="updateProfileModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Update Personal Info</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name" />
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary-accent" id="confirmUpdateProfile">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteAccountConfirmModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold text-danger">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fw-bold text-danger">
+                        Are you absolutely sure? This action cannot be undone.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger" id="finalDeleteButton">
+                        I Understand, Delete Account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       
+        const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (!currentUser) {
+            // User not logged in
+            window.location.href = "signIn.html";
+        }
+
+       
+        function getUsers() {
+            return JSON.parse(localStorage.getItem("users")) || [];
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        function updateCurrentUser(updatedUser) {
+            localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+        }
+
+       
+        function changePassword(newPassword) {
+            if (!newPassword || newPassword.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return;
+            }
+
+            let users = getUsers();
+
+            users = users.map(user => {
+                if (user.email === currentUser.email) {
+                    user.password = newPassword;
+                    currentUser.password = newPassword;
+                }
+                return user;
+            });
+
+            saveUsers(users);
+            updateCurrentUser(currentUser);
+
+            alert("Password changed successfully");
+        }
+
+       
+        function updateProfile(newName) {
+            if (!newName || newName.trim() === "") {
+                alert("Name cannot be empty");
+                return;
+            }
+
+            let users = getUsers();
+
+            users = users.map(user => {
+                if (user.email === currentUser.email) {
+                    user.name = newName;
+                    currentUser.name = newName;
+                }
+                return user;
+            });
+
+            saveUsers(users);
+            updateCurrentUser(currentUser);
+
+            alert("Profile updated successfully");
+        }
+
+        
+        const finalDeleteButton = document.getElementById("finalDeleteButton");
+
+        if (finalDeleteButton) {
+            finalDeleteButton.addEventListener("click", () => {
+                let users = getUsers();
+
+                users = users.filter(user => user.email !== currentUser.email);
+
+                saveUsers(users);
+                localStorage.removeItem("currentUser");
+
+                alert("Account deleted successfully");
+                window.location.href = "index.html";
+            });
+        }
+
+       
+        function logout() {
+            localStorage.removeItem("currentUser");
+            window.location.href = "login.html";
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const nameInput = document.getElementById("nameInput");
+            const emailInput = document.getElementById("emailInput");
+
+            if (nameInput) nameInput.value = currentUser.name || "";
+            if (emailInput) emailInput.value = currentUser.email || "";
+        });
+
+    </script>
+
 </body>
+
 </html>
