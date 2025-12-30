@@ -40,7 +40,9 @@
         .header-icon:hover {
             background-color: var(--accent-color);
         }
-
+        .header-dropdown:active{
+            background-color: white;
+        }
         .footer-icon:hover {
             background-color: var(--accent-color);
         }
@@ -150,7 +152,7 @@
 </head>
 
 <body>
-    <header style="position: sticky; z-index: 1020; top: 0;">
+        <header style="position: sticky; z-index: 1020; top: 0;">
         <nav class="navbar navbar-expand-lg bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand fw-bold fs-4" href="index.html" style="color: black;">
@@ -159,9 +161,32 @@
                     Lajotam Fashion
                 </a>
                 <div class="d-flex gap-2 align-items-center">
-                    <div class="d-flex d-lg-none">
-                        <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
-                                style="color: black;"></i></a>
+                    <div class="d-flex  d-lg-none  align-items-center">
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-1 py-1 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="dropdown-item fw-semibold" href="signin.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="signup.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="user-dashboard.html">My Account Dashboard</a></li>
+                            </ul>
+                        </div>
+
+                        <a href="cart.html" class="header-icon px-1 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -171,7 +196,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active fw-semibold" href="men.html">Men</a></li>
+                         <li class="nav-item"><a class="nav-link fw-semibold" aria-current="page"
+                                href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold active" href="men.html">Men</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="jewelry.html">Jewelry</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
@@ -179,9 +206,34 @@
                         <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
                     </ul>
-                    <div class="d-flex gap-3 d-none d-lg-block">
+                    <div class="d-flex gap-3 d-none d-lg-block align-items-center">
+
+
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-2 py-2 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="header-dropdown dropdown-item fw-semibold" href="signin.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="header-dropdown dropdown-item fw-semibold" href="signup.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="header-dropdown dropdown-item" href="user-dashboard.html">My Account Dashboard</a></li>
+                            </ul>
+                        </div>
+
                         <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
                                 class="bi bi-bag text-dark"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -196,7 +248,7 @@
             <div class="container text-center">
                 <h1 class="fw-bold display-1">Men's Distinguished Style</h1>
                 <p class="fs-4 fw-light mb-4">Elevate your wardrobe with premium tailoring and modern essentials.</p>
-                <a href="read-our-blog.html"><button class="btn btn-primary-accent btn-lg">Read Our Blog</button></a>
+                <a href="read-our-blog.html" class="text-light"><button class="btn btn-primary-accent btn-lg">Read Our Blog</button></a>
             </div>
             </div>
         </section>
@@ -876,7 +928,7 @@
         <div class="container">
             <div class="container py-5 px-4">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <h4 class="pb-2">About Lajotam</h4>
                         <p style="color: #737373; font-size: 18px;">
                             Lajotam Fashion brings you the finest collection of luxury fashion, jewelry, and
@@ -885,18 +937,8 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="pb-2">Customer Service</h4>
-                        <ul class="list-unstyled" style="line-height: 30px; color: #737373;">
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Contact Us</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Shipping & Returns</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Size Guide</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">FAQ</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
-                        </ul>
-                    </div>
 
-                    <div class="col-lg-4 ">
+                    <div class="col-lg-6 ">
                         <h4 class="pb-2">Contact Us</h4>
                         <div>
                             <div class="d-flex flex-column gap-2 list-unstyled">

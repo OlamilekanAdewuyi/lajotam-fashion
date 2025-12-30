@@ -40,6 +40,9 @@
         .header-icon:hover {
             background-color: var(--accent-color);
         }
+        .header-dropdown:active{
+            background-color: white;
+        }
 
         footer li a {
             color: #737373;
@@ -155,9 +158,32 @@
                     Lajotam Fashion
                 </a>
                 <div class="d-flex gap-2 align-items-center">
-                    <div class="d-flex d-lg-none">
-                        <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
-                                style="color: black;"></i></a>
+                    <div class="d-flex  d-lg-none  align-items-center">
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-1 py-1 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="dropdown-item fw-semibold" href="signin.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="signup.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="user-dashboard.html">My Account Dashboard</a></li>
+                            </ul>
+                        </div>
+
+                        <a href="cart.html" class="header-icon px-1 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -172,15 +198,40 @@
                         <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="jewelry.html">Jewelry</a></li>
-                        <li class="nav-item"><a class="nav-link active fw-semibold" href="footwear.html">Footwear</a>
+                        <li class="nav-item"><a class="nav-link fw-semibold active" href="footwear.html">Footwear</a>
                         </li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="lace.html">Lace</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
                     </ul>
-                    <div class="d-flex gap-3 d-none d-lg-block">
+                    <div class="d-flex gap-3 d-none d-lg-block align-items-center">
+
+
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-2 py-2 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="header-dropdown dropdown-item fw-semibold" href="signin.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="header-dropdown dropdown-item fw-semibold" href="signup.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="header-dropdown dropdown-item" href="user-dashboard.html">My Account Dashboard</a></li>
+                            </ul>
+                        </div>
+
                         <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
                                 class="bi bi-bag text-dark"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -188,15 +239,17 @@
     </header>
 
     <main>
-        <section class="footwear-hero" style="background-image: url('Images/footwear/footwear-hero1.jpg'); height: 60vh; background-size: cover; background-position: center 30%; background-repeat: no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.55); display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; padding-top: 1rem; padding-bottom: 1rem;">
+        <section class="footwear-hero"
+            style="background-image: url('Images/footwear/footwear-hero1.jpg'); height: 60vh; background-size: cover; background-position: center 30%; background-repeat: no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.55); display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; padding-top: 1rem; padding-bottom: 1rem;">
             <div>
 
-           
-            <div class="container text-center">
-                <h1 class="fw-bold display-2">Step Into Perfection</h1>
-                <p class="fs-4 fw-light mb-4">Masterfully crafted footwear where design meets comfort.</p>
-                <a href="read-our-blog.html"><button class="btn btn-primary-accent btn-lg">Read Our Blog</button></a>
-            </div>
+
+                <div class="container text-center">
+                    <h1 class="fw-bold display-2">Step Into Perfection</h1>
+                    <p class="fs-4 fw-light mb-4">Masterfully crafted footwear where design meets comfort.</p>
+                    <a href="read-our-blog.html" class="text-light"><button class="btn btn-primary-accent btn-lg">Read
+                            Our Blog</button></a>
+                </div>
             </div>
         </section>
 
@@ -206,35 +259,40 @@
 
             <div class="scroll-showcase">
 
-                <a href="#" class="showcase-item" style="background-image: url('Images/footwear/the-stiletto-edit-women-evening-wear-2.jpg');">
+                <a href="#" class="showcase-item"
+                    style="background-image: url('Images/footwear/the-stiletto-edit-women-evening-wear-2.jpg');">
                     <div class="showcase-text">
                         <h5 class="fw-bold m-0">The Stiletto Edit</h5>
                         <small>Women's Evening Wear</small>
                     </div>
                 </a>
 
-                <a href="#" class="showcase-item" style="background-image: url('Images/footwear/italian-leather-oxford-men-formal.jpg');">
+                <a href="#" class="showcase-item"
+                    style="background-image: url('Images/footwear/italian-leather-oxford-men-formal.jpg');">
                     <div class="showcase-text">
                         <h5 class="fw-bold m-0">Italian Leather Oxfords</h5>
                         <small>Men's Formal Collection</small>
                     </div>
                 </a>
 
-                <a href="#" class="showcase-item" style="background-image: url('Images/footwear/boot-room-autumn-winter-selection.jpg');">
+                <a href="#" class="showcase-item"
+                    style="background-image: url('Images/footwear/boot-room-autumn-winter-selection.jpg');">
                     <div class="showcase-text">
                         <h5 class="fw-bold m-0">The Boot Room</h5>
                         <small>Autumn/Winter Collection</small>
                     </div>
                 </a>
 
-                <a href="#" class="showcase-item" style="background-image: url('Images/footwear/casual-luxury-loafers.jpg');">
+                <a href="#" class="showcase-item"
+                    style="background-image: url('Images/footwear/casual-luxury-loafers.jpg');">
                     <div class="showcase-text">
                         <h5 class="fw-bold m-0">Casual Luxury Loafers</h5>
                         <small>The Everyday Comfort</small>
                     </div>
                 </a>
 
-                <a href="#" class="showcase-item" style="background-image: url('Images/footwear/stiletto-edit-women-evening-wear-2.jpg');">
+                <a href="#" class="showcase-item"
+                    style="background-image: url('Images/footwear/stiletto-edit-women-evening-wear-2.jpg');">
                     <div class="showcase-text">
                         <h5 class="fw-bold m-0">The Stiletto Edit</h5>
                         <small>Women's Evening Wear</small>
@@ -247,135 +305,143 @@
 
             <div class="row g-4">
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/suede-pointed-stiletto.jpg" alt="Suede Pointed Stiletto" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/suede-pointed-stiletto.jpg" alt="Suede Pointed Stiletto"
+                                    class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Suede Pointed Stiletto</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$185.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Suede Pointed Stiletto</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$185.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/classic-leather-oxford-footwear.jpg" alt="Classic Leather Oxford" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/classic-leather-oxford-footwear.jpg"
+                                    alt="Classic Leather Oxford" class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Classic Leather Oxford</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$240.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Classic Leather Oxford</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$240.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/italian-leather-ankle-boot.jpg" alt="Italian Leather Ankle Boot" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/italian-leather-ankle-boot.jpg"
+                                    alt="Italian Leather Ankle Boot" class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Italian Leather Ankle Boot</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$310.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Italian Leather Ankle Boot</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$310.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/suede-driving-loafers.jpg" alt="Suede Driving Loafer" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/suede-driving-loafers.jpg" alt="Suede Driving Loafer"
+                                    class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Suede Driving Loafer</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$165.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Suede Driving Loafer</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$165.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/designer-leather-ballet-flat.jpg" alt="Designer Ballet Flat" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/designer-leather-ballet-flat.jpg" alt="Designer Ballet Flat"
+                                    class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Designer Leather Ballet Flat</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$195.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Designer Leather Ballet Flat</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$195.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/luxury-leather-sneaker.jpg" alt="Luxury Leather Sneaker" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/luxury-leather-sneaker.jpg" alt="Luxury Leather Sneaker"
+                                    class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Luxury Leather Sneaker</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$280.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Luxury Leather Sneaker</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$280.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/strappy-summer-sandal.jpg" alt="Strappy Summer Sandal" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/strappy-summer-sandal.jpg" alt="Strappy Summer Sandal"
+                                    class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Strappy Summer Sandal</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$150.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Strappy Summer Sandal</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$150.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-    <div class="col-lg-3 col-md-6 col-sm-6">
-        <a href="product-details.html" style="text-decoration: none; color: inherit;">
-            <div class="shoe-card">
-                <div class="shoe-card-image-wrapper">
-                    <img src="Images/footwear/suede-chelsea-boot.jpg" alt="Suede Chelsea Boot" class="shoe-card-image">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="product-details.html" style="text-decoration: none; color: inherit;">
+                        <div class="shoe-card">
+                            <div class="shoe-card-image-wrapper">
+                                <img src="Images/footwear/suede-chelsea-boot.jpg" alt="Suede Chelsea Boot"
+                                    class="shoe-card-image">
+                            </div>
+                            <div class="shoe-card-body text-center">
+                                <h5 class="fw-semibold mb-1">Suede Chelsea Boot</h5>
+                                <p class="fs-5 fw-bold product-price mb-2">$350.00</p>
+                                <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="shoe-card-body text-center">
-                    <h5 class="fw-semibold mb-1">Suede Chelsea Boot</h5>
-                    <p class="fs-5 fw-bold product-price mb-2">$350.00</p>
-                    <button class="btn btn-primary-accent w-100 btn-sm">View Details</button>
-                </div>
-            </div>
-        </a>
-    </div>
 
-</div>
-        
+            </div>
+
     </main>
 
     <footer style="background: black; color: #737373;">
         <div class="container">
             <div class="container py-5 px-4">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <h4 class="pb-2">About Lajotam</h4>
                         <p style="color: #737373; font-size: 18px;">
                             Lajotam Fashion brings you the finest collection of luxury fashion, jewelry, and
@@ -384,18 +450,7 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="pb-2">Customer Service</h4>
-                        <ul class="list-unstyled" style="line-height: 30px; color: #737373;">
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Contact Us</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Shipping & Returns</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Size Guide</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">FAQ</a></li>
-                            <li class="footer-nav"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 ">
+                    <div class="col-lg-6 ">
                         <h4 class="pb-2">Contact Us</h4>
                         <div>
                             <div class="d-flex flex-column gap-2 list-unstyled">

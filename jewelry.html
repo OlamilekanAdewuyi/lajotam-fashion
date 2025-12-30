@@ -45,6 +45,9 @@
         .header-icon:hover {
             background-color: var(--accent-color);
         }
+        .header-dropdown:active{
+            background-color: white;
+        }
 
         footer li a {
             color: #737373;
@@ -156,57 +159,106 @@
     </style>
 
     <body>
-        <header style="position: sticky; z-index: 1020; top: 0;">
-            <nav class="navbar navbar-expand-lg bg-white shadow-sm">
-                <div class="container">
-                    <a class="navbar-brand fw-bold fs-4" href="index.html" style="color: black;">
-                        <span style="color: var(--accent-color); margin-right: 5px;">
-                            <i class="bi bi-gem"></i> </span>
-                        Lajotam Fashion
-                    </a>
-                    <div class="d-flex gap-2 align-items-center">
-                        <div class="d-flex d-lg-none">
-                            <a href="cart.html" class="header-icon px-2 py-1 rounded-3"><i class="bi bi-bag"
-                                    style="color: black;"></i></a>
+         <header style="position: sticky; z-index: 1020; top: 0;">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="index.html" style="color: black;">
+                    <span style="color: var(--accent-color); margin-right: 5px;">
+                        <i class="bi bi-gem"></i> </span>
+                    Lajotam Fashion
+                </a>
+                <div class="d-flex gap-2 align-items-center">
+                    <div class="d-flex  d-lg-none  align-items-center">
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-1 py-1 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="dropdown-item fw-semibold" href="signin.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="signup.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="user-dashboard.html">My Account Dashboard</a></li>
+                            </ul>
                         </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+
+                        <a href="cart.html" class="header-icon px-1 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+
                     </div>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
-                            <li class="nav-item"><a class="nav-link active fw-semibold" href="jewelry.html">Jewelry</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="lace.html">Lace</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a>
-                            </li>
-                        </ul>
-                        <div class="d-flex gap-3 d-none d-lg-block">
-                           
-                            <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
-                                    class="bi bi-bag text-dark"></i></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link fw-semibold" aria-current="page"
+                                href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="men.html">Men</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="women.html">Women</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold active" href="jewelry.html">Jewelry</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="footwear.html">Footwear</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="lace.html">Lace</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="read-our-blog.html">Our Blog</a></li>
+                    </ul>
+                    <div class="d-flex gap-3 d-none d-lg-block align-items-center">
+
+
+                        <div class="dropdown-center dropdown-hover d-inline-flex align-items-center">
+
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="header-icon px-2 py-2 rounded-3 text-decoration-none">
+                                <i class="bi bi-person text-dark"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2">
+                                <li>
+                                    <h6 class="dropdown-header">Account</h6>
+                                </li>
+
+                                <li><a class="header-dropdown dropdown-item fw-semibold" href="signin.html"
+                                        style="color: var(--accent-color);">Sign In</a></li>
+                                <li><a class="header-dropdown dropdown-item fw-semibold" href="signup.html">Sign Up</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="header-dropdown dropdown-item" href="user-dashboard.html">My Account Dashboard</a></li>
+                            </ul>
                         </div>
+
+                        <a href="cart.html" class="header-icon px-2 py-2 rounded-3"><i
+                                class="bi bi-bag text-dark"></i></a>
+
                     </div>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
         <main>
-            <section class="jewelry-hero-banner" style="background-image: url('Images/jewelry/jewerly-hero3.jpg'); height: 60vh; background-size: cover; background-position: center 30%; background-repeat: no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.55); display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; padding-top: 1rem; padding-bottom: 1rem;" >
+            <section class="jewelry-hero-banner"
+                style="background-image: url('Images/jewelry/jewerly-hero3.jpg'); height: 60vh; background-size: cover; background-position: center 30%; background-repeat: no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.55); display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; padding-top: 1rem; padding-bottom: 1rem;">
                 <div>
 
-                
-                <div class="container text-center">
-                    <h1 class="fw-bold display-2">Eternal Elegance</h1>
-                    <p class="fs-4 fw-light mb-4">Discover Handcrafted Gold, Diamonds, and Fine Gemstones.</p>
-                    <a href="read-our-blog.html"><button class="btn btn-primary-accent btn-lg">Read Our Blog</button></a>
-                </div>
+
+                    <div class="container text-center">
+                        <h1 class="fw-bold display-2">Eternal Elegance</h1>
+                        <p class="fs-4 fw-light mb-4">Discover Handcrafted Gold, Diamonds, and Fine Gemstones.</p>
+                        <a href="read-our-blog.html" class="text-light"><button
+                                class="btn btn-primary-accent btn-lg">Read Our Blog</button></a>
+                    </div>
                 </div>
             </section>
             <div class="container pb-5">
@@ -228,7 +280,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Solitaire-Diamond-Ring.jpg" alt="Solitaire Diamond Ring" class="jewelry-image">
+                            <img src="Images/jewelry/Solitaire-Diamond-Ring.jpg" alt="Solitaire Diamond Ring"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">The Classic Solitaire</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$2,500</p>
@@ -240,7 +293,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Half-Eternity-Ring.jpg" alt="Half Eternity Ring" class="jewelry-image">
+                            <img src="Images/jewelry/Half-Eternity-Ring.jpg" alt="Half Eternity Ring"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Half Eternity Ring</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$1,550</p>
@@ -264,7 +318,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Sapphire-Cocktail-Ring.jpg" alt="Sapphire Cocktail Ring" class="jewelry-image">
+                            <img src="Images/jewelry/Sapphire-Cocktail-Ring.jpg" alt="Sapphire Cocktail Ring"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Sapphire Cocktail Ring</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$3,200</p>
@@ -276,7 +331,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Pavé-Set-Diamond-Ring.jpg" alt="Pavé Set Diamond Ring" class="jewelry-image">
+                            <img src="Images/jewelry/Pavé-Set-Diamond-Ring.jpg" alt="Pavé Set Diamond Ring"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Pavé Diamond Halo Ring</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$1,950</p>
@@ -288,7 +344,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Gold-Stacking-Rings.jpg" alt="Gold Stacking Rings" class="jewelry-image">
+                            <img src="Images/jewelry/Gold-Stacking-Rings.jpg" alt="Gold Stacking Rings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Set of 3 Stacking Rings</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$620</p>
@@ -300,7 +357,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Engravable-Signet-Ring.jpg" alt="Engravable Signet Ring" class="jewelry-image">
+                            <img src="Images/jewelry/Engravable-Signet-Ring.jpg" alt="Engravable Signet Ring"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Engravable Signet Ring</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$750</p>
@@ -330,8 +388,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Layered-Gold-Statement-Necklace.jpg" alt="Layered Gold Statement Necklace"
-                                class="jewelry-image">
+                            <img src="Images/jewelry/Layered-Gold-Statement-Necklace.jpg"
+                                alt="Layered Gold Statement Necklace" class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Statement Chain Necklace</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$890</p>
@@ -343,7 +401,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Emerald-Gemstone-Pendant.jpg" alt="Emerald Gemstone Pendant" class="jewelry-image">
+                            <img src="Images/jewelry/Emerald-Gemstone-Pendant.jpg" alt="Emerald Gemstone Pendant"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Emerald Gemstone Pendant</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$1,250</p>
@@ -355,7 +414,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Set-of-Layered-Necklaces.jpg" alt="Set of Layered Necklaces" class="jewelry-image">
+                            <img src="Images/jewelry/Set-of-Layered-Necklaces.jpg" alt="Set of Layered Necklaces"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Delicate Layered Set (3)</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$550</p>
@@ -392,7 +452,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Fine-Pearl-Necklace.jpg" alt="Fine Pearl Necklace" class="jewelry-image">
+                            <img src="Images/jewelry/Fine-Pearl-Necklace.jpg" alt="Fine Pearl Necklace"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Classic Akoya Pearl Necklace</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$1,990</p>
@@ -404,7 +465,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/initial-pendant-necklace.jpg" alt="Initial Pendant Necklace" class="jewelry-image">
+                            <img src="Images/jewelry/initial-pendant-necklace.jpg" alt="Initial Pendant Necklace"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Personalized Initial Pendant</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$450</p>
@@ -434,7 +496,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Baroque-Pearl-Drop-Earrings.jpg" alt="Baroque Pearl Drop Earrings" class="jewelry-image">
+                            <img src="Images/jewelry/Baroque-Pearl-Drop-Earrings.jpg" alt="Baroque Pearl Drop Earrings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Baroque Pearl Drops</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$450</p>
@@ -446,7 +509,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Diamond-Stud-Earrings.jpg" alt="Diamond Stud Earrings" class="jewelry-image">
+                            <img src="Images/jewelry/Diamond-Stud-Earrings.jpg" alt="Diamond Stud Earrings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Pavé Diamond Studs</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$950</p>
@@ -458,7 +522,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Gold-Hoop-Earrings.jpg" alt="Gold Hoop Earrings" class="jewelry-image">
+                            <img src="Images/jewelry/Gold-Hoop-Earrings.jpg" alt="Gold Hoop Earrings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Chunky Gold Hoop Earrings</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$520</p>
@@ -470,7 +535,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Tassel-Dangle-Earrings.jpg" alt="Tassel Dangle Earrings" class="jewelry-image">
+                            <img src="Images/jewelry/Tassel-Dangle-Earrings.jpg" alt="Tassel Dangle Earrings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Ruby Tassel Dangle Earrings</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$850</p>
@@ -494,7 +560,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Gold-Huggie-Hoops.jpg" alt="Gold Huggie Hoops" class="jewelry-image">
+                            <img src="Images/jewelry/Gold-Huggie-Hoops.jpg" alt="Gold Huggie Hoops"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Mini Gold Huggie Hoops</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$350</p>
@@ -506,7 +573,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Geometric-Earrings.jpg" alt="Geometric Earrings" class="jewelry-image">
+                            <img src="Images/jewelry/Geometric-Earrings.jpg" alt="Geometric Earrings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Minimalist Geometric Drop</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$290</p>
@@ -518,7 +586,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Vintage-Clip-On-Earrings.jpg" alt="Vintage Clip On Earrings" class="jewelry-image">
+                            <img src="Images/jewelry/Vintage-Clip-On-Earrings.jpg" alt="Vintage Clip On Earrings"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Vintage Clip-On Earrings</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$410</p>
@@ -536,7 +605,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Diamond-Pave-Cuff-Bracelet.jpg" alt="Diamond Pave Cuff Bracelet" class="jewelry-image">
+                            <img src="Images/jewelry/Diamond-Pave-Cuff-Bracelet.jpg" alt="Diamond Pave Cuff Bracelet"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Diamond Pavé Cuff</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$1,999</p>
@@ -548,7 +618,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Diamond-Tennis-Bracelet.jpg" alt="Diamond Tennis Bracelet" class="jewelry-image">
+                            <img src="Images/jewelry/Diamond-Tennis-Bracelet.jpg" alt="Diamond Tennis Bracelet"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Classic Diamond Tennis Bracelet</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$4,500</p>
@@ -584,7 +655,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Gold-Link-Bracelet.jpg" alt="Gold Link Bracelet" class="jewelry-image">
+                            <img src="Images/jewelry/Gold-Link-Bracelet.jpg" alt="Gold Link Bracelet"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Chunky Gold Link Bracelet</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$990</p>
@@ -596,7 +668,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Gemstone-Bracelet.jpg" alt="Gemstone Bracelet" class="jewelry-image">
+                            <img src="Images/jewelry/Gemstone-Bracelet.jpg" alt="Gemstone Bracelet"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Sapphire Gemstone Cuff</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$2,100</p>
@@ -608,7 +681,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Delicate-Box-Chain-Bracelet.jpg" alt="Delicate Box Chain Bracelet" class="jewelry-image">
+                            <img src="Images/jewelry/Delicate-Box-Chain-Bracelet.jpg" alt="Delicate Box Chain Bracelet"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Delicate Box Chain Bracelet</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$390</p>
@@ -638,7 +712,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Ladies-Rose-Gold-Watch.jpg" alt="Ladies Rose Gold Watch" class="jewelry-image">
+                            <img src="Images/jewelry/Ladies-Rose-Gold-Watch.jpg" alt="Ladies Rose Gold Watch"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Rose Gold Classic Watch</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$3,200</p>
@@ -650,7 +725,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Diamond-Bezel-Watch.jpg" alt="Diamond Bezel Watch" class="jewelry-image">
+                            <img src="Images/jewelry/Diamond-Bezel-Watch.jpg" alt="Diamond Bezel Watch"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Diamond Bezel Chronograph</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$6,800</p>
@@ -662,7 +738,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Leather-Strap-Watch.jpg" alt="Leather Strap Watch" class="jewelry-image">
+                            <img src="Images/jewelry/Leather-Strap-Watch.jpg" alt="Leather Strap Watch"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Slimline Leather Strap Watch</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$1,950</p>
@@ -674,7 +751,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Gold-Bracelet-Watch.jpg" alt="Gold Bracelet Watch" class="jewelry-image">
+                            <img src="Images/jewelry/Gold-Bracelet-Watch.jpg" alt="Gold Bracelet Watch"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Gold Link Bracelet Watch</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$4,100</p>
@@ -686,7 +764,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/Square-Face-Watch.jpg" alt="Square Face Watch" class="jewelry-image">
+                            <img src="Images/jewelry/Square-Face-Watch.jpg" alt="Square Face Watch"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Vintage Square Face Watch</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$2,500</p>
@@ -710,7 +789,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="jewelry-card">
-                            <img src="Images/jewelry/chronograph-watch.jpg" alt="Chronograph Watch" class="jewelry-image">
+                            <img src="Images/jewelry/chronograph-watch.jpg" alt="Chronograph Watch"
+                                class="jewelry-image">
                             <div class="p-3">
                                 <h5 class="fw-semibold mb-1">Sport Chronograph Watch</h5>
                                 <p class="fs-5 fw-bold product-price mb-2">$3,500</p>
@@ -741,7 +821,7 @@
             <div class="container">
                 <div class="container py-5 px-4">
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-6 col-md-6">
                             <h4 class="pb-2">About Lajotam</h4>
                             <p style="color: #737373; font-size: 18px;">
                                 Lajotam Fashion brings you the finest collection of luxury fashion, jewelry, and
@@ -750,18 +830,7 @@
                             </p>
                         </div>
 
-                        <div class="col-lg-4 col-md-6">
-                            <h4 class="pb-2">Customer Service</h4>
-                            <ul class="list-unstyled" style="line-height: 30px; color: #737373;">
-                                <li class="footer-nav"><a href="#" class="footer-nav-link">Contact Us</a></li>
-                                <li class="footer-nav"><a href="#" class="footer-nav-link">Shipping & Returns</a></li>
-                                <li class="footer-nav"><a href="#" class="footer-nav-link">Size Guide</a></li>
-                                <li class="footer-nav"><a href="#" class="footer-nav-link">FAQ</a></li>
-                                <li class="footer-nav"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-lg-4 ">
+                        <div class="col-lg-6">
                             <h4 class="pb-2">Contact Us</h4>
                             <div>
                                 <div class="d-flex flex-column gap-2 list-unstyled">

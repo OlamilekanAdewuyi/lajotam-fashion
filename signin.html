@@ -72,12 +72,20 @@
             }
 
             .form-control {
-                background-color: var(--form-bg) !important;
-                border-radius: 8px !important;
+                background-color: var(--form-bg);
                 border: 1px solid var(--border-color);
-                padding: 10px 15px;
-                box-shadow: none !important;
+                border-radius: 10px;
+                padding: 12px 18px;
+                width: 100%;
+                font-size: 1rem;
+                transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
             }
+            .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 168, 58, 0.2);
+            transform: translateY(-2px);
+        }
 
             @keyframes cardFadeIn {
                 to {
@@ -111,7 +119,8 @@
                     </div>
                 </form>
 
-                <a href="signin.html"><button class="btn btn-login w-100 mb-3 py-3">LOG IN SECURELY</button></a>
+                <a href="signin.html" class="text-light"><button class="btn btn-login w-100 mb-3 py-3">LOG IN
+                        SECURELY</button></a>
 
                 <p class="text-center fw-semibold" style="color: var(--text-color);">
                     New to Lajotam?
@@ -128,7 +137,7 @@
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
 
-    <script>
+<script>
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
     const loginBtn = document.querySelector(".btn-login");
