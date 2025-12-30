@@ -186,75 +186,86 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-       
-        const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+        // Redirect if session is missing
         if (!currentUser) {
-            // User not logged in
-            window.location.href = "signIn.html";
+            window.location.href = "signin.html";
         }
 
-       
+        // Helper functions to manage the database
         function getUsers() {
-            return JSON.parse(localStorage.getItem("users")) || [];
+            return JSON.parse(localStorage.getItem("lajotamUsers")) || [];
         }
 
         function saveUsers(users) {
-            localStorage.setItem("users", JSON.stringify(users));
+            localStorage.setItem("lajotamUsers", JSON.stringify(users));
         }
 
-        function updateCurrentUser(updatedUser) {
-            localStorage.setItem("currentUser", JSON.stringify(updatedUser));
-        }
+        // --- 1. UPDATE PROFILE NAME ---
+        const confirmUpdateBtn = document.getElementById("confirmUpdateProfile");
+        if (confirmUpdateBtn) {
+            confirmUpdateBtn.addEventListener("click", () => {
+                const newName = document.getElementById("nameInput").value.trim();
 
-       
-        function changePassword(newPassword) {
-            if (!newPassword || newPassword.length < 6) {
-                alert("Password must be at least 6 characters long");
-                return;
-            }
-
-            let users = getUsers();
-
-            users = users.map(user => {
-                if (user.email === currentUser.email) {
-                    user.password = newPassword;
-                    currentUser.password = newPassword;
+                if (newName === "") {
+                    alert("Name cannot be empty");
+                    return;
                 }
-                return user;
+
+                let users = getUsers();
+                users = users.map(user => {
+                    if (user.email === currentUser.email) {
+                        user.fullName = newName;
+                        currentUser.fullName = newName;
+                    }
+                    return user;
+                });
+
+                saveUsers(users);
+                localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+                alert("Profile updated successfully!");
+                location.reload();
             });
-
-            saveUsers(users);
-            updateCurrentUser(currentUser);
-
-            alert("Password changed successfully");
         }
 
-       
-        function updateProfile(newName) {
-            if (!newName || newName.trim() === "") {
-                alert("Name cannot be empty");
-                return;
-            }
+        // --- 2. CHANGE PASSWORD (NEW) ---
+        const confirmPassBtn = document.getElementById("confirmChangePassword");
+        if (confirmPassBtn) {
+            confirmPassBtn.addEventListener("click", () => {
+                const newPass = document.getElementById("newPasswordInput").value;
 
-            let users = getUsers();
-
-            users = users.map(user => {
-                if (user.email === currentUser.email) {
-                    user.name = newName;
-                    currentUser.name = newName;
+                if (newPass.length < 6) {
+                    alert("Password must be at least 6 characters long");
+                    return;
                 }
-                return user;
+
+                let users = getUsers();
+                users = users.map(user => {
+                    if (user.email === currentUser.email) {
+                        user.password = newPass;      // Update in master list
+                        currentUser.password = newPass; // Update current session
+                    }
+                    return user;
+                });
+
+                saveUsers(users);
+                localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+                alert("Password changed successfully!");
+                location.reload();
             });
-
-            saveUsers(users);
-            updateCurrentUser(currentUser);
-
-            alert("Profile updated successfully");
         }
 
-        
+        const deleteInput = document.getElementById("confirmDeleteInput");
         const finalDeleteButton = document.getElementById("finalDeleteButton");
+
+        if (deleteInput && finalDeleteButton) {
+            deleteInput.addEventListener("input", (e) => {
+                finalDeleteButton.disabled = e.target.value !== "DELETE";
+            });
+        }
 
         if (finalDeleteButton) {
             finalDeleteButton.addEventListener("click", () => {
@@ -270,21 +281,12 @@
             });
         }
 
-       
-        function logout() {
-            localStorage.removeItem("currentUser");
-            window.location.href = "login.html";
-        }
-
-        
         document.addEventListener("DOMContentLoaded", () => {
             const nameInput = document.getElementById("nameInput");
-            const emailInput = document.getElementById("emailInput");
-
-            if (nameInput) nameInput.value = currentUser.name || "";
-            if (emailInput) emailInput.value = currentUser.email || "";
+            if (nameInput && currentUser) {
+                nameInput.value = currentUser.fullName || "";
+            }
         });
-
     </script>
 
 </body>
